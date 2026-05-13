@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxury Arabic Wedding Invitation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<style>
+html{scroll-behavior:smooth;}
+
+body{
+margin:0;
+font-family:'Montserrat',sans-serif;
+background:#f8f1f3;
+overflow-x:hidden;
+color:#4c3a4a;
+}
+
+.arabic{
+font-family:'Amiri',serif;
+}
+
+/* COVER */
+
+.premium-cover{
+position:fixed;
+inset:0;
+z-index:99999;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
+background:
+linear-gradient(135deg,#122019,#20352d,#122019);
+}
+
+.cover-pattern{
+position:absolute;
+inset:0;
+background:url('https://www.transparenttextures.com/patterns/arabesque.png');
+opacity:.05;
+}
+
+.cover-blur{
+position:absolute;
+width:700px;
+height:700px;
+border-radius:999px;
+background:radial-gradient(rgba(231,211,167,.18),transparent 70%);
+filter:blur(40px);
+}
+
+.cover-box{
+position:relative;
+z-index:2;
+width:min(92%,700px);
+padding:80px 40px;
+border-radius:40px;
+text-align:center;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(18px);
+border:1px solid rgba(231,211,167,.18);
+box-shadow:0 20px 80px rgba(0,0,0,.35);
+animation:fadeUp 1.5s ease;
+}
+
+.cover-arabic{
+font-size:28px;
+color:#d9be82;
+margin-bottom:30px;
+line-height:2;
+}
+
+.cover-quote{
+font-family:'Great Vibes',cursive;
+font-size:clamp(70px,10vw,150px);
+line-height:1.05;
+font-weight:400;
+color:#fff5da;
+margin-bottom:30px;
+text-shadow:0 0 25px rgba(231,211,167,.15);
+}
+
+.cover-subtitle{
+max-width:520px;
+margin:0 auto 45px;
+line-height:2;
+font-size:17px;
+color:#f4ead9;
+}
+
+.mini-invite{
+display:inline-block;
+padding:18px 30px;
+margin-bottom:45px;
+border-radius:24px;
+background:rgba(255,255,255,.04);
+border:1px solid rgba(231,211,167,.08);
+backdrop-filter:blur(10px);
+}
+
+.mini-label{
+font-size:11px;
+letter-spacing:4px;
+text-transform:uppercase;
+color:#d9be82;
+margin-bottom:12px;
+}
+
+.mini-name{
+font-size:20px;
+font-weight:600;
+color:#fff7df;
+margin-bottom:8px;
+}
+
+.mini-place{
+font-size:13px;
+letter-spacing:3px;
+color:#ccb78f;
+}
+
+.open-btn-cover{
+padding:18px 50px;
+border:none;
+border-radius:999px;
+font-weight:700;
+font-size:16px;
+cursor:pointer;
+background:linear-gradient(145deg,#ecd6a5,#c7a062);
+color:#2d2417;
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+transition:.4s;
+}
+
+.open-btn-cover:hover{
+transform:translateY(-5px) scale(1.04);
+}
+
+.floating{
+position:absolute;
+color:#d9be82;
+opacity:.4;
+font-size:26px;
+animation:floating 6s ease-in-out infinite;
+}
+
+.floating1{top:15%;left:15%;}
+.floating2{bottom:18%;right:16%;animation-delay:1s;}
+.floating3{top:22%;right:20%;animation-delay:2s;}
+
+@keyframes floating{
+0%,100%{transform:translateY(0px) rotate(0deg);}
+50%{transform:translateY(-18px) rotate(8deg);}
+}
+
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(40px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+/* HERO */
+
+.hero{
+position:relative;
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:
+linear-gradient(rgba(18,28,24,.82),rgba(18,28,24,.82)),
+url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1600');
+background-size:cover;
+background-position:center;
+overflow:hidden;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+inset:0;
+background:url('https://www.transparenttextures.com/patterns/arabesque.png');
+opacity:.06;
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+text-align:center;
+padding:20px;
+max-width:1000px;
+color:white;
+}
+
+.main-title{
+font-family:'Great Vibes',cursive;
+font-size:clamp(70px,10vw,140px);
+line-height:1.15;
+color:#f7e7b0;
+margin:30px 0;
+}
+
+.hero-ayat{
+font-size:clamp(22px,4vw,38px);
+line-height:2;
+color:#fff4da;
+margin-top:35px;
+}
+
+.translate{
+line-height:2;
+color:#9f8994;
+}
+
+.section{
+padding:120px 24px;
+}
+
+.soft{background:#fff9fb;}
+
+.container{max-width:1200px;margin:auto;}
+.container-sm{max-width:920px;margin:auto;}
+
+.section-head{
+text-align:center;
+margin-bottom:70px;
+}
+
+.section-sub{
+letter-spacing:5px;
+font-size:13px;
+color:#c8a96b;
+margin-bottom:15px;
+}
+
+.section-title{
+font-size:clamp(42px,6vw,80px);
+margin:0;
+}
+
+.card{
+background:white;
+padding:55px;
+border-radius:40px;
+box-shadow:0 20px 60px rgba(0,0,0,.05);
+}
+
+.intro-header{
+text-align:center;
+cursor:pointer;
+}
+
+.intro-main{
+font-family:'Great Vibes',cursive;
+font-size:clamp(75px,9vw,130px);
+line-height:1.1;
+}
+
+.intro-content{
+max-height:0;
+overflow:hidden;
+opacity:0;
+transition:max-height 1.2s cubic-bezier(.22,1,.36,1), opacity .8s ease;
+}
+
+.intro-content.show{
+max-height:1400px;
+opacity:1;
+margin-top:50px;
+}
+
+.intro-text{
+font-size:33px;
+line-height:2.5;
+text-align:center;
+}
+
+.swap-wrap{
+margin-top:55px;
+display:flex;
+justify-content:center;
+}
+
+.swap-btn{
+width:76px;
+height:76px;
+border-radius:999px;
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+font-size:34px;
+background:linear-gradient(145deg,#ecd6a5,#c7a062);
+color:#2a2418;
+animation:floaty 2.5s ease-in-out infinite;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+@keyframes floaty{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(12px);}
+}
+
+.couple-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:35px;
+}
+
+.couple-card{
+background:white;
+padding:55px 40px;
+border-radius:40px;
+text-align:center;
+box-shadow:0 20px 60px rgba(0,0,0,.05);
+}
+
+.couple-img{
+width:240px;
+height:240px;
+object-fit:cover;
+border-radius:999px;
+border:6px solid #e7d3a7;
+margin-bottom:28px;
+}
+
+.gold{color:#c8a96b;}
+
+.couple-name{
+font-size:42px;
+margin:10px 0;
+}
+
+.couple-desc{
+font-size:24px;
+line-height:2;
+}
+
+.event-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:35px;
+}
+
+.event-card{
+background:white;
+padding:60px 40px;
+border-radius:40px;
+text-align:center;
+box-shadow:0 20px 60px rgba(0,0,0,.05);
+}
+
+.event-title{
+font-size:38px;
+color:#c8a96b;
+margin-bottom:25px;
+}
+
+.event-date{
+font-size:30px;
+line-height:2;
+}
+
+.divider{
+width:100px;
+height:2px;
+background:linear-gradient(to right,transparent,#d9be82,transparent);
+margin:35px auto;
+}
+
+.location-grid{
+display:grid;
+grid-template-columns:420px 1fr;
+gap:35px;
+}
+
+.location-card{
+background:white;
+padding:50px 40px;
+border-radius:40px;
+text-align:center;
+box-shadow:0 20px 60px rgba(0,0,0,.05);
+}
+
+.map-frame{
+overflow:hidden;
+border-radius:40px;
+min-height:520px;
+}
+
+.map-frame iframe{
+width:100%;
+height:100%;
+border:none;
+}
+
+.secret-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
+}
+
+.secret-btn{
+padding:45px;
+border:none;
+border-radius:30px;
+background:white;
+font-size:30px;
+font-family:'Amiri',serif;
+cursor:pointer;
+box-shadow:0 10px 40px rgba(0,0,0,.05);
+}
+
+.rsvp-form{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.rsvp-form input,
+.rsvp-form select,
+.rsvp-form textarea{
+padding:22px;
+border:none;
+border-radius:22px;
+background:white;
+font-family:'Montserrat',sans-serif;
+}
+
+.rsvp-form button{
+padding:22px;
+border:none;
+border-radius:22px;
+font-weight:700;
+background:linear-gradient(145deg,#ecd6a5,#c7a062);
+}
+
+.footer{
+padding:110px 24px;
+background:#2f4037;
+text-align:center;
+color:white;
+}
+
+.footer-text{
+font-size:42px;
+color:#f7e7b0;
+}
+
+.music-btn{
+position:fixed;
+right:25px;
+bottom:25px;
+width:82px;
+height:82px;
+border-radius:999px;
+border:none;
+background:linear-gradient(145deg,#ecd6a5,#c7a062);
+font-size:28px;
+z-index:999;
+animation:spin 8s linear infinite;
+}
+
+@keyframes spin{
+100%{transform:rotate(360deg);}
+}
+
+.popup-overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.55);
+display:none;
+align-items:center;
+justify-content:center;
+padding:20px;
+z-index:9999;
+}
+
+.popup-box{
+background:#4d3c4b;
+padding:50px;
+border-radius:35px;
+max-width:650px;
+width:100%;
+}
+
+.popup-arabic{
+font-family:'Amiri',serif;
+font-size:34px;
+line-height:2;
+text-align:center;
+color:#fff4d8;
+}
+
+@media(max-width:900px){
+
+.couple-grid,
+.event-grid,
+.location-grid,
+.secret-grid{
+grid-template-columns:1fr;
+}
+
+.card,
+.couple-card,
+.event-card,
+.location-card{
+padding:35px;
+}
+
+.intro-text{
+font-size:24px;
+}
+
+.couple-img{
+width:190px;
+height:190px;
+}
+
+.section{
+padding:90px 20px;
+}
+
+.cover-box{
+padding:55px 28px;
+}
+
+.footer-text{
+font-size:28px;
+}
+
+.cover-quote{
+font-size:80px;
+}
+
+}
+</style>
+</head>
+<body>
+
+<section id="cover" class="premium-cover">
+<div class="cover-blur"></div>
+<div class="cover-pattern"></div>
+
+<div class="cover-box">
+
+<p class="cover-arabic arabic">
+وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا
+</p>
+
+<h1 class="cover-quote">
+Two souls,
+<br>
+one sacred journey.
+</h1>
+
+<p class="cover-subtitle">
+Dalam cinta yang dipenuhi keberkahan,
+kami mengundang Anda
+untuk hadir di hari istimewa kami.
+</p>
+
+<div class="mini-invite">
+<p class="mini-label">Kepada Yth.</p>
+<p class="mini-name">Bapak/Ibu/Saudara/i</p>
+<p class="mini-place">Di Tempat</p>
+</div>
+
+<br>
+
+<button class="open-btn-cover" onclick="openInvitation()">
+✨ Buka Undangan
+</button>
+
+</div>
+
+<div class="floating floating1">✦</div>
+<div class="floating floating2">❁</div>
+<div class="floating floating3">✦</div>
+
+</section>
+
+<section class="hero">
+<div class="hero-content">
+
+<p class="arabic" style="font-size:42px;color:#f7e7b0;">
+بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
+</p>
+
+<h1 class="main-title">
+فريحة الفجرية
+<br>&<br>
+ريندي تيراتنا
+</h1>
+
+<p style="font-size:18px;letter-spacing:2px;">
+Farihatul Fajriah & Rendy Tiratna
+</p>
+
+<p class="arabic hero-ayat">
+وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا
+لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً
+</p>
+
+<div class="swap-wrap">
+<a href="#intro" class="swap-btn">↓</a>
+</div>
+
+</div>
+</section>
+
+<section id="intro" class="section soft">
+<div class="container-sm">
+
+<div class="intro-header" onclick="toggleIntro()">
+<p class="section-sub arabic">كلمة ترحيبية</p>
+
+<h2 class="intro-main">
+رسالة المحبة
+</h2>
+
+<p class="translate">
+Klik untuk membuka kata pengantar ↓
+</p>
+</div>
+
+<div id="introContent" class="intro-content">
+<div class="card">
+
+<p class="arabic intro-text">
+بِكُلِّ مَحَبَّةٍ وَسُرُورٍ نَدْعُوكُمْ لِمُشَارَكَتِنَا
+فِي أَجْمَلِ لَحَظَاتِ عُمُرِنَا.
+</p>
+
+<p class="translate" style="margin-top:35px;">
+Dengan penuh cinta dan kebahagiaan,
+kami mengundang Anda untuk menjadi bagian dari momen terindah dalam hidup kami.
+</p>
+
+<div class="swap-wrap">
+<a href="#couple" class="swap-btn">↓</a>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+<section id="couple" class="section">
+<div class="container">
+
+<div class="section-head">
+<p class="section-sub arabic">العروس والعريس</p>
+<h2 class="section-title">Mempelai</h2>
+</div>
+
+<div class="couple-grid">
+
+<div class="couple-card">
+<img src="./assets/images/bride.jpg" class="couple-img">
+
+<h3 class="arabic gold" style="font-size:34px;">العروس</h3>
+
+<h2 class="arabic couple-name">
+فريحة الفجرية
+</h2>
+
+<p class="translate">Farihatul Fajriah</p>
+
+<p class="arabic couple-desc">
+الابنة الأولى
+<br>
+للحاج أحمد سهرواردي
+<br>
+وأم نور الحفصة
+</p>
+</div>
+
+<div class="couple-card">
+<img src="./assets/images/groom.jpg" class="couple-img">
+
+<h3 class="arabic gold" style="font-size:34px;">العريس</h3>
+
+<h2 class="arabic couple-name">
+ريندي تيراتنا
+</h2>
+
+<p class="translate">Rendy Tiratna</p>
+
+<p class="arabic couple-desc">
+الابن الأول
+<br>
+للمرحوم سورتنو
+<br>
+والمرحومة سوبرابتي
+</p>
+</div>
+
+</div>
+
+<div class="swap-wrap">
+<a href="#event" class="swap-btn">↓</a>
+</div>
+
+</div>
+</section>
+
+<section id="event" class="section soft">
+<div class="container">
+
+<div class="section-head">
+<p class="section-sub arabic">برنامج الحفل</p>
+<h2 class="section-title">مراسم الزفاف</h2>
+</div>
+
+<div class="event-grid">
+
+<div class="event-card">
+<div style="font-size:60px;">🕌</div>
+
+<h3 class="arabic event-title">
+عقد القران
+</h3>
+
+<p class="arabic event-date">
+السبت ٢٠ ذو الحجة ١٤٤٧ هـ
+</p>
+
+<p class="translate">
+Sabtu, 06 Juni 2026
+</p>
+
+<div class="divider"></div>
+
+<p class="arabic event-date">
+الساعة 09:00 صباحاً
+</p>
+</div>
+
+<div class="event-card">
+<div style="font-size:60px;">✨</div>
+
+<h3 class="arabic event-title">
+حفل الاستقبال
+</h3>
+
+<p class="arabic event-date">
+السبت ٢٠ ذو الحجة ١٤٤٧ هـ
+</p>
+
+<p class="translate">
+Sabtu, 06 Juni 2026
+</p>
+
+<div class="divider"></div>
+
+<p class="arabic event-date">
+الساعة 10:00 صباحاً
+</p>
+</div>
+
+</div>
+
+<div class="swap-wrap">
+<a href="#location" class="swap-btn">↓</a>
+</div>
+
+</div>
+</section>
+
+<section id="location" class="section">
+<div class="container">
+
+<div class="section-head">
+<p class="section-sub arabic">موقع الحفل</p>
+<h2 class="section-title">مكان الزفاف</h2>
+</div>
+
+<div class="location-grid">
+
+<div class="location-card">
+<div style="font-size:60px;">📍</div>
+
+<h3 class="arabic gold" style="font-size:40px;">
+في منزل العروس
+</h3>
+
+<div class="divider"></div>
+
+<p class="arabic" style="font-size:30px;line-height:2;">
+معهد الكلياني الإسلامي
+<br>
+سيتامان بادارينتشانغ
+</p>
+
+<p class="translate" style="margin-top:20px;">
+Pon-Pes Koleang (Al Kuliyani)
+<br>
+Citaman - Padarincang
+</p>
+</div>
+
+<div class="map-frame">
+<iframe src="https://maps.google.com/maps?q=padarincang&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+</div>
+
+</div>
+
+<div class="swap-wrap">
+<a href="#secret" class="swap-btn">↓</a>
+</div>
+
+</div>
+</section>
+
+<section id="secret" class="section soft">
+<div class="container-sm">
+
+<div class="section-head">
+<p class="section-sub arabic">رسائل خاصة</p>
+<h2 class="section-title">كلمات صغيرة لكم</h2>
+</div>
+
+<div class="secret-grid">
+<button class="secret-btn" onclick="openPopup(1)">رسالة ١</button>
+<button class="secret-btn" onclick="openPopup(2)">رسالة ٢</button>
+<button class="secret-btn" onclick="openPopup(3)">رسالة ٣</button>
+<button class="secret-btn" onclick="openPopup(4)">رسالة ٤</button>
+</div>
+
+<div class="swap-wrap">
+<a href="#rsvp" class="swap-btn">↓</a>
+</div>
+
+</div>
+</section>
+
+<section id="rsvp" class="section">
+<div class="container-sm">
+
+<div class="section-head">
+<p class="section-sub arabic">تأكيد الحضور</p>
+<h2 class="section-title">الرجاء تأكيد حضوركم</h2>
+</div>
+
+<div class="card">
+<form class="rsvp-form">
+
+<input type="text" placeholder="Nama Lengkap">
+
+<select>
+<option>Konfirmasi Kehadiran</option>
+<option>Hadir</option>
+<option>Tidak Hadir</option>
+</select>
+
+<textarea rows="5" placeholder="Ucapan dan doa"></textarea>
+
+<button type="submit">
+Kirim Konfirmasi ✨
+</button>
+
+</form>
+</div>
+
+</div>
+</section>
+
+<footer class="footer">
+<p class="arabic footer-text">
+بارك الله لكما وبارك عليكما وجمع بينكما في خير
+</p>
+</footer>
+
+<button class="music-btn" onclick="toggleMusic()">♫</button>
+
+<audio id="music" loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_8b3c1e4fd3.mp3?filename=arabic-background-music-110507.mp3">
+</audio>
+
+<div id="popup" class="popup-overlay">
+<div class="popup-box" id="popupContent"></div>
+</div>
+
+<script>
+const music=document.getElementById('music');
+
+function openInvitation(){
+const cover=document.getElementById('cover');
+cover.style.transition='1.2s cubic-bezier(.22,1,.36,1)';
+cover.style.opacity='0';
+cover.style.visibility='hidden';
+music.play().catch(()=>{});
+}
+
+function toggleMusic(){
+if(music.paused){music.play();}
+else{music.pause();}
+}
+
+function toggleIntro(){
+const content=document.getElementById('introContent');
+
+if(content.classList.contains('show')){
+content.classList.remove('show');
+}else{
+content.classList.add('show');
+
+setTimeout(()=>{
+content.scrollIntoView({
+behavior:'smooth',
+block:'start'
+});
+},300);
+}
+}
+
+const messages={
+1:`<div class="popup-arabic">أسعد الله أيامكم كما أسعدتم حضورنا 🤍</div>`,
+2:`<div class="popup-arabic">شكرًا لحضوركم ودعواتكم الجميلة ✨</div>`,
+3:`<div class="popup-arabic">نسأل الله أن يجمعنا دائمًا بالمحبة والخير 🌙</div>`,
+4:`<div class="popup-arabic">وجودكم يزيد فرحتنا نورًا وجمالًا 💍</div>`
+};
+
+function openPopup(id){
+document.getElementById('popup').style.display='flex';
+document.getElementById('popupContent').innerHTML=messages[id];
+}
+
+document.getElementById('popup').onclick=function(){
+this.style.display='none';
+}
+</script>
+
+</body>
+</html>
