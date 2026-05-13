@@ -28,6 +28,11 @@ html{
 scroll-behavior:smooth;
 }
 
+<div class="floating floating1">🤍</div>
+<div class="floating floating2">✨</div>
+<div class="floating floating3">🌙</div>
+<div class="floating floating4">💍</div>
+
 body{
 font-family:'Montserrat',sans-serif;
 background:var(--soft);
@@ -42,6 +47,148 @@ display:block;
 
 .arabic{
 font-family:'Amiri',serif;
+}
+
+/* ===== FLOATING ICON ===== */
+
+.floating{
+
+position:fixed;
+
+font-size:20px;
+
+pointer-events:none;
+
+opacity:.35;
+
+z-index:1;
+
+animation:floatMove 10s infinite ease-in-out;
+
+}
+
+.floating1{
+
+top:20%;
+
+left:8%;
+
+animation-delay:0s;
+
+}
+
+.floating2{
+
+top:40%;
+
+right:10%;
+
+animation-delay:2s;
+
+}
+
+.floating3{
+
+bottom:20%;
+
+left:15%;
+
+animation-delay:4s;
+
+}
+
+.floating4{
+
+bottom:30%;
+
+right:12%;
+
+animation-delay:6s;
+
+}
+
+@keyframes floatMove{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-18px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+/* ===== SCROLL ANIMATION ===== */
+
+.reveal{
+
+opacity:0;
+
+transform:translateY(40px);
+
+transition:
+opacity 1s ease,
+transform 1s ease;
+
+}
+
+.reveal.active{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+.scroll-btn{
+
+animation:bounceGlow 2s infinite;
+
+}
+
+@keyframes bounceGlow{
+
+0%{
+
+transform:translateY(0);
+
+box-shadow:0 0 0 rgba(201,169,107,.4);
+
+}
+
+50%{
+
+transform:translateY(10px);
+
+box-shadow:0 0 25px rgba(201,169,107,.5);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+box-shadow:0 0 0 rgba(201,169,107,.2);
+
+}
+
+}
+.section{
+
+position:relative;
+
+z-index:2;
+
 }
 
 /* MOBILE FIRST */
@@ -1372,7 +1519,7 @@ Wassalamu’alaikum Warahmatullahi Wabarakatuh
 
 <!-- COUPLE -->
 
-<section class="section">
+<section class="section reveal">
 
 <div class="container">
 
@@ -1436,7 +1583,7 @@ Wassalamu’alaikum Warahmatullahi Wabarakatuh
 
 <!-- EVENT -->
 
-<section class="section">
+<section class="section reveal">
 
 <div class="container">
 
@@ -1496,7 +1643,7 @@ Pukul 10:00 WIB
 
 <!-- ===== LOKASI ===== -->
 
-<section class="section" id="location">
+<section class="section reveal" id="location">
 
 <div class="container">
 
@@ -1557,7 +1704,7 @@ loading="lazy">
 
 <!-- ===== SECRET MESSAGE ===== -->
 
-<section class="section">
+<section class="section reveal">
 
 <div class="container">
 
@@ -1609,7 +1756,7 @@ PESAN
 
 <!-- RSVP -->
 
-<section class="section">
+<section class="section reveal">
 
 <div class="container">
 
@@ -1809,6 +1956,46 @@ document.getElementById('popup').onclick=function(){
 this.style.display='none';
 }
 
+/* ===== DYNAMIC REVEAL ===== */
+
+const reveals = document.querySelectorAll('.reveal');
+
+function revealOnScroll(){
+
+const windowHeight = window.innerHeight;
+
+reveals.forEach((reveal)=>{
+
+const revealTop = reveal.getBoundingClientRect().top;
+
+const revealBottom = reveal.getBoundingClientRect().bottom;
+
+const visiblePoint = 120;
+
+/* MASUK VIEW */
+
+if(
+revealTop < windowHeight - visiblePoint &&
+revealBottom > visiblePoint
+){
+
+reveal.classList.add('active');
+
+}else{
+
+/* KELUAR VIEW */
+
+reveal.classList.remove('active');
+
+}
+
+});
+
+}
+
+window.addEventListener('scroll', revealOnScroll);
+
+window.addEventListener('load', revealOnScroll);
 </script>
 
 </body>
