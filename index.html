@@ -7,8 +7,6 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
 <style>
 html{scroll-behavior:smooth;}
 
@@ -24,143 +22,113 @@ color:#4c3a4a;
 font-family:'Amiri',serif;
 }
 
-/* COVER */
+/* SIMPLE COVER */
 
-.premium-cover{
+.simple-cover{
 position:fixed;
 inset:0;
 z-index:99999;
 display:flex;
 align-items:center;
 justify-content:center;
-overflow:hidden;
-background:
-linear-gradient(135deg,#122019,#20352d,#122019);
+padding:20px;
+overflow-y:auto;
+background:linear-gradient(135deg,#15241e,#22362f);
 }
 
-.cover-pattern{
+.simple-pattern{
 position:absolute;
 inset:0;
 background:url('https://www.transparenttextures.com/patterns/arabesque.png');
-opacity:.05;
+opacity:.04;
 }
 
-.cover-blur{
-position:absolute;
-width:700px;
-height:700px;
-border-radius:999px;
-background:radial-gradient(rgba(231,211,167,.18),transparent 70%);
-filter:blur(40px);
-}
-
-.cover-box{
+.simple-box{
 position:relative;
 z-index:2;
-width:min(92%,700px);
-padding:80px 40px;
-border-radius:40px;
+width:min(92%,520px);
+padding:45px 30px;
+border-radius:32px;
 text-align:center;
-background:rgba(255,255,255,.05);
-backdrop-filter:blur(18px);
-border:1px solid rgba(231,211,167,.18);
-box-shadow:0 20px 80px rgba(0,0,0,.35);
-animation:fadeUp 1.5s ease;
+background:rgba(255,255,255,.04);
+backdrop-filter:blur(14px);
+border:1px solid rgba(231,211,167,.12);
 }
 
-.cover-arabic{
-font-size:28px;
+.mini-arabic{
+font-size:24px;
+line-height:1.8;
 color:#d9be82;
-margin-bottom:30px;
-line-height:2;
+margin-bottom:22px;
 }
 
-.cover-quote{
+.simple-title{
+font-family:'Cinzel',serif;
+font-size:18px;
+letter-spacing:5px;
+font-weight:500;
+color:#d9be82;
+margin-bottom:25px;
+text-transform:uppercase;
+}
+
+.simple-couple{
 font-family:'Great Vibes',cursive;
-font-size:clamp(70px,10vw,150px);
-line-height:1.05;
+font-size:clamp(52px,8vw,90px);
+line-height:1.15;
 font-weight:400;
 color:#fff5da;
-margin-bottom:30px;
-text-shadow:0 0 25px rgba(231,211,167,.15);
+margin-bottom:25px;
 }
 
-.cover-subtitle{
-max-width:520px;
-margin:0 auto 45px;
+.simple-quote{
+font-size:15px;
 line-height:2;
-font-size:17px;
-color:#f4ead9;
+color:#efe5d6;
+margin-bottom:35px;
+font-style:italic;
 }
 
-.mini-invite{
-display:inline-block;
-padding:18px 30px;
-margin-bottom:45px;
-border-radius:24px;
-background:rgba(255,255,255,.04);
-border:1px solid rgba(231,211,167,.08);
-backdrop-filter:blur(10px);
+.simple-invite{
+padding:18px;
+border-radius:22px;
+background:rgba(255,255,255,.03);
+margin-bottom:35px;
 }
 
-.mini-label{
-font-size:11px;
-letter-spacing:4px;
-text-transform:uppercase;
+.simple-invite p{
+font-size:12px;
+letter-spacing:3px;
 color:#d9be82;
-margin-bottom:12px;
+margin-bottom:10px;
 }
 
-.mini-name{
-font-size:20px;
+.simple-invite h3{
+font-size:24px;
 font-weight:600;
 color:#fff7df;
 margin-bottom:8px;
 }
 
-.mini-place{
+.simple-invite span{
 font-size:13px;
-letter-spacing:3px;
+letter-spacing:2px;
 color:#ccb78f;
 }
 
-.open-btn-cover{
-padding:18px 50px;
+.simple-btn{
+padding:16px 38px;
 border:none;
 border-radius:999px;
 font-weight:700;
-font-size:16px;
 cursor:pointer;
 background:linear-gradient(145deg,#ecd6a5,#c7a062);
 color:#2d2417;
-box-shadow:0 10px 30px rgba(0,0,0,.2);
 transition:.4s;
 }
 
-.open-btn-cover:hover{
-transform:translateY(-5px) scale(1.04);
-}
-
-.floating{
-position:absolute;
-color:#d9be82;
-opacity:.4;
-font-size:26px;
-animation:floating 6s ease-in-out infinite;
-}
-
-.floating1{top:15%;left:15%;}
-.floating2{bottom:18%;right:16%;animation-delay:1s;}
-.floating3{top:22%;right:20%;animation-delay:2s;}
-
-@keyframes floating{
-0%,100%{transform:translateY(0px) rotate(0deg);}
-50%{transform:translateY(-18px) rotate(8deg);}
-}
-
-@keyframes fadeUp{
-from{opacity:0;transform:translateY(40px);}
-to{opacity:1;transform:translateY(0);}
+.simple-btn:hover{
+transform:translateY(-4px);
 }
 
 /* HERO */
@@ -496,14 +464,188 @@ text-align:center;
 color:#fff4d8;
 }
 
+
 @media(max-width:900px){
+
+body{
+overflow-x:hidden;
+}
+
+.hero-content{
+padding:30px 18px;
+}
+
+.main-title{
+font-size:72px;
+line-height:1.1;
+}
+
+.hero-ayat{
+font-size:22px;
+line-height:1.9;
+}
+
+.simple-box{
+width:100%;
+padding:38px 22px;
+border-radius:28px;
+margin:20px 0;
+}
+
+.simple-couple{
+font-size:64px;
+line-height:1.1;
+}
+
+.simple-title{
+font-size:14px;
+letter-spacing:4px;
+}
+
+.simple-quote{
+font-size:14px;
+line-height:1.9;
+}
+
+.simple-invite{
+padding:16px;
+}
+
+.simple-invite h3{
+font-size:20px;
+line-height:1.5;
+}
+
+.simple-btn{
+width:100%;
+padding:18px;
+font-size:15px;
+}
+
+.section{
+padding:80px 18px;
+}
+
+.section-title{
+font-size:48px;
+line-height:1.2;
+}
+
+.section-sub{
+font-size:11px;
+letter-spacing:3px;
+}
+
+.card,
+.couple-card,
+.event-card,
+.location-card{
+padding:28px 22px;
+border-radius:28px;
+}
+
+.intro-main{
+font-size:78px;
+}
+
+.intro-text{
+font-size:22px;
+line-height:2.2;
+}
 
 .couple-grid,
 .event-grid,
 .location-grid,
 .secret-grid{
 grid-template-columns:1fr;
+gap:24px;
 }
+
+.couple-img{
+width:170px;
+height:170px;
+}
+
+.couple-name{
+font-size:34px;
+line-height:1.3;
+}
+
+.couple-desc{
+font-size:20px;
+line-height:1.9;
+}
+
+.event-title{
+font-size:32px;
+}
+
+.event-date{
+font-size:24px;
+line-height:1.8;
+}
+
+.location-card p.arabic{
+font-size:24px !important;
+}
+
+.map-frame{
+min-height:320px;
+}
+
+.secret-btn{
+padding:28px 18px;
+font-size:24px;
+border-radius:24px;
+}
+
+.rsvp-form input,
+.rsvp-form select,
+.rsvp-form textarea{
+padding:18px;
+font-size:15px;
+}
+
+.rsvp-form button{
+padding:18px;
+font-size:15px;
+}
+
+.swap-btn{
+width:62px;
+height:62px;
+font-size:28px;
+}
+
+.music-btn{
+width:68px;
+height:68px;
+right:18px;
+bottom:18px;
+font-size:24px;
+}
+
+.popup-box{
+padding:32px 22px;
+border-radius:28px;
+}
+
+.popup-arabic{
+font-size:26px;
+line-height:1.8;
+}
+
+.footer{
+padding:80px 20px;
+}
+
+.footer-text{
+font-size:28px;
+line-height:1.8;
+}
+
+}
+
 
 .card,
 .couple-card,
@@ -525,16 +667,8 @@ height:190px;
 padding:90px 20px;
 }
 
-.cover-box{
-padding:55px 28px;
-}
-
 .footer-text{
 font-size:28px;
-}
-
-.cover-quote{
-font-size:80px;
 }
 
 }
@@ -542,46 +676,43 @@ font-size:80px;
 </head>
 <body>
 
-<section id="cover" class="premium-cover">
-<div class="cover-blur"></div>
-<div class="cover-pattern"></div>
+<section id="cover" class="simple-cover">
+<div class="simple-pattern"></div>
 
-<div class="cover-box">
+<div class="simple-box">
 
-<p class="cover-arabic arabic">
-وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا
+<p class="mini-arabic arabic">
+بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
 </p>
 
-<h1 class="cover-quote">
-Two souls,
-<br>
-one sacred journey.
+<h1 class="simple-title">
+The Wedding Of
 </h1>
 
-<p class="cover-subtitle">
-Dalam cinta yang dipenuhi keberkahan,
-kami mengundang Anda
-untuk hadir di hari istimewa kami.
+<h2 class="simple-couple">
+Farihatul Fajriah
+<br>
+&
+<br>
+Rendy Tiratna
+</h2>
+
+<p class="simple-quote">
+“Two souls united in love,
+under the blessing of Allah.”
 </p>
 
-<div class="mini-invite">
-<p class="mini-label">Kepada Yth.</p>
-<p class="mini-name">Bapak/Ibu/Saudara/i</p>
-<p class="mini-place">Di Tempat</p>
+<div class="simple-invite">
+<p>Kepada Yth.</p>
+<h3>Bapak/Ibu/Saudara/i</h3>
+<span>Di Tempat</span>
 </div>
 
-<br>
-
-<button class="open-btn-cover" onclick="openInvitation()">
-✨ Buka Undangan
+<button class="simple-btn" onclick="openInvitation()">
+Buka Undangan
 </button>
 
 </div>
-
-<div class="floating floating1">✦</div>
-<div class="floating floating2">❁</div>
-<div class="floating floating3">✦</div>
-
 </section>
 
 <section class="hero">
@@ -891,7 +1022,7 @@ const music=document.getElementById('music');
 
 function openInvitation(){
 const cover=document.getElementById('cover');
-cover.style.transition='1.2s cubic-bezier(.22,1,.36,1)';
+cover.style.transition='1s';
 cover.style.opacity='0';
 cover.style.visibility='hidden';
 music.play().catch(()=>{});
