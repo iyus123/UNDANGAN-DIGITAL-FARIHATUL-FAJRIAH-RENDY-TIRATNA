@@ -11,11 +11,15 @@
 <style>
 
 :root{
---bg:#15231d;
---gold:#dec58d;
---soft:#f8f3ef;
---card:#ffffff;
---text:#4a4046;
+
+--bg:#141916;
+--bg2:#1f2622;
+--gold:#e0c78f;
+--gold-soft:#b89963;
+--dark:#f8f2e9;
+--soft:#c8b69d;
+--card:rgba(255,255,255,.05);
+
 }
 
 *{
@@ -34,10 +38,23 @@ scroll-behavior:smooth;
 <div class="floating floating4">💍</div>
 
 body{
+
 font-family:'Montserrat',sans-serif;
-background:var(--soft);
-color:var(--text);
+
+background:
+linear-gradient(
+180deg,
+#141916 0%,
+#1b211d 40%,
+#141916 100%
+);
+
+color:var(--dark);
+
 overflow-x:hidden;
+
+position:relative;
+
 }
 
 img{
@@ -47,6 +64,26 @@ display:block;
 
 .arabic{
 font-family:'Amiri',serif;
+}
+
+/* ===== ARABESQUE OVERLAY ===== */
+
+body::before{
+
+content:'';
+
+position:fixed;
+
+inset:0;
+
+background:url('https://www.transparenttextures.com/patterns/arabesque.png');
+
+opacity:.045;
+
+pointer-events:none;
+
+z-index:0;
+
 }
 
 /* ===== FLOATING ICON ===== */
@@ -189,7 +226,9 @@ position:relative;
 
 z-index:2;
 
+padding:70px 18px;
 }
+
 
 /* MOBILE FIRST */
 
@@ -521,7 +560,11 @@ color:#3d3338;
 
 .card{
 
-background:white;
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(12px);
+
+border:1px solid rgba(255,255,255,.06);
 
 padding:24px 18px;
 
@@ -649,7 +692,11 @@ gap:18px;
 
 .couple-card{
 
-background:white;
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(12px);
+
+border:1px solid rgba(255,255,255,.06);
 
 padding:24px 18px;
 
@@ -715,7 +762,11 @@ gap:18px;
 
 .event-card{
 
-background:white;
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(12px);
+
+border:1px solid rgba(255,255,255,.06);
 
 padding:24px 18px;
 
@@ -802,7 +853,11 @@ margin-top:24px;
 
 width:34%;
 
-background:white;
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(12px);
+
+border:1px solid rgba(255,255,255,.06);
 
 padding:24px 18px;
 
@@ -814,7 +869,7 @@ text-align:center;
 
 display:flex;
 
-flex-direction:column;
+flex-direction:column;   
 
 justify-content:center;
 
@@ -886,7 +941,11 @@ border-radius:28px;
 
 box-shadow:0 10px 24px rgba(0,0,0,.05);
 
-background:white;
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(12px);
+
+border:1px solid rgba(255,255,255,.06);
 
 }
 
@@ -982,7 +1041,11 @@ margin-top:28px;
 
 border:none;
 
-background:white;
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(12px);
+
+border:1px solid rgba(255,255,255,.06);
 
 padding:22px 10px;
 
@@ -1007,6 +1070,114 @@ transition:.3s ease;
 transform:translateY(-4px);
 
 background:#fffaf3;
+
+}
+
+/* ===== TURUT MENGUNDANG ===== */
+
+.invite-grid{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:18px;
+
+margin-top:24px;
+
+}
+
+.invite-card{
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(12px);
+
+border:1px solid rgba(255,255,255,.06);
+
+padding:24px 18px;
+
+border-radius:26px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.05);
+
+}
+
+.invite-title{
+
+font-size:26px;
+
+text-align:center;
+
+color:var(--gold);
+
+margin-bottom:6px;
+
+}
+
+.invite-subtitle{
+
+font-size:10px;
+
+letter-spacing:.5px;
+
+text-align:center;
+
+color:#9f8d84;
+
+margin-bottom:14px;
+
+}
+
+.invite-line{
+
+width:60px;
+
+height:1px;
+
+background:#e3cf9f;
+
+margin:14px auto 20px;
+
+}
+
+.invite-text{
+
+font-size:16px;
+
+line-height:2;
+
+text-align:center;
+
+color:#3f3438;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.invite-grid{
+
+grid-template-columns:1fr;
+
+gap:16px;
+
+}
+
+.invite-title{
+
+font-size:22px;
+
+}
+
+.invite-text{
+
+font-size:15px;
+
+line-height:1.9;
+
+}
 
 }
 
@@ -1119,6 +1290,164 @@ padding:24px 18px;
 .popup-card .arabic{
 
 font-size:20px;
+
+}
+
+}
+
+/* ===== CHAT GRID ===== */
+
+.chat-wrap{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:16px;
+
+margin-top:24px;
+
+}
+
+.chat-card{
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(12px);
+
+border:1px solid rgba(255,255,255,.06);
+
+padding:18px;
+
+border-radius:18px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.05);
+
+transition:.4s ease;
+
+min-height:180px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:flex-start;
+
+}
+
+.chat-card:hover{
+
+transform:translateY(-4px);
+
+}
+
+/* HEADER */
+
+.chat-header{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+margin-bottom:14px;
+
+}
+
+.chat-avatar{
+
+width:42px;
+height:42px;
+
+border-radius:14px;
+
+background:linear-gradient(145deg,#ecd6a5,#c9a96b);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-weight:700;
+
+font-size:15px;
+
+color:#2b2418;
+
+flex-shrink:0;
+
+}
+
+.chat-username{
+
+font-size:13px;
+
+color:#3f3438;
+
+margin-bottom:2px;
+
+}
+
+.chat-time{
+
+font-size:10px;
+
+color:#a08f7d;
+
+}
+
+/* MESSAGE */
+
+.chat-message{
+
+font-size:13px;
+
+line-height:1.9;
+
+color:#5c4f56;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.chat-wrap{
+
+grid-template-columns:1fr 1fr;
+
+gap:12px;
+
+}
+
+.chat-card{
+
+padding:16px;
+
+border-radius:16px;
+
+min-height:165px;
+
+}
+
+.chat-message{
+
+font-size:12px;
+
+line-height:1.8;
+
+}
+
+.chat-avatar{
+
+width:38px;
+height:38px;
+
+border-radius:12px;
+
+font-size:13px;
 
 }
 
@@ -1384,6 +1713,198 @@ font-size:70px;
 
 }
 
+/* ===== BACKGROUND EFFECT ===== */
+
+body{
+
+position:relative;
+
+overflow-x:hidden;
+
+}
+
+/* ORB */
+
+/* ===== CINEMATIC ORB ===== */
+
+.bg-orb{
+
+position:fixed;
+
+border-radius:50%;
+
+filter:blur(120px);
+
+opacity:.32;
+
+pointer-events:none;
+
+z-index:0;
+
+mix-blend-mode:screen;
+
+animation:orbMove 14s infinite ease-in-out;
+
+}
+
+.orb1{
+
+width:320px;
+height:320px;
+
+background:#cfa45f;
+
+top:-100px;
+left:-100px;
+
+}
+
+.orb2{
+
+width:260px;
+height:260px;
+
+background:#6f5345;
+
+bottom:0;
+right:-80px;
+
+animation-delay:4s;
+
+}
+
+.orb3{
+
+width:220px;
+height:220px;
+
+background:#e6cf9f;
+
+top:45%;
+left:40%;
+
+animation-delay:8s;
+
+}
+
+/* SPARKLE */
+
+.sparkle{
+
+position:fixed;
+
+font-size:18px;
+
+color:#f3dba8;
+
+opacity:.35;
+
+pointer-events:none;
+
+z-index:1;
+
+animation:sparkleFloat 6s infinite ease-in-out;
+
+}
+
+.sparkle1{
+
+top:14%;
+left:12%;
+
+}
+
+.sparkle2{
+
+top:30%;
+right:14%;
+
+animation-delay:2s;
+
+}
+
+.sparkle3{
+
+bottom:22%;
+left:18%;
+
+animation-delay:4s;
+
+}
+
+.sparkle4{
+
+bottom:16%;
+right:12%;
+
+animation-delay:6s;
+
+}
+
+/* ANIMATION */
+
+@keyframes orbMove{
+
+0%{
+
+transform:
+translateY(0px)
+translateX(0px);
+
+}
+
+50%{
+
+transform:
+translateY(-30px)
+translateX(20px);
+
+}
+
+100%{
+
+transform:
+translateY(0px)
+translateX(0px);
+
+}
+
+}
+
+@keyframes sparkleFloat{
+
+0%{
+
+transform:
+translateY(0px)
+scale(1);
+
+opacity:.2;
+
+}
+
+50%{
+
+transform:
+translateY(-16px)
+scale(1.2);
+
+opacity:.5;
+
+}
+
+100%{
+
+transform:
+translateY(0px)
+scale(1);
+
+opacity:.2;
+
+}
+
+}
+
 </style>
 </head>
 <body>
@@ -1432,6 +1953,17 @@ Buka Undangan
 </div>
 
 </section>
+
+<!-- ===== BACKGROUND FX ===== -->
+
+<div class="bg-orb orb1"></div>
+<div class="bg-orb orb2"></div>
+<div class="bg-orb orb3"></div>
+
+<div class="sparkle sparkle1">✦</div>
+<div class="sparkle sparkle2">✧</div>
+<div class="sparkle sparkle3">✦</div>
+<div class="sparkle sparkle4">✧</div>
 
 <!-- HERO -->
 
@@ -1740,6 +2272,174 @@ PESAN
 
 </section>
 
+<!-- ===== MENGANGKAT HAJAT ===== -->
+
+<section class="section reveal">
+
+<div class="container">
+
+<p class="section-label">
+MENGANGKAT HAJAT
+</p>
+
+<h2 class="section-title arabic">
+رافعو الحفل
+</h2>
+
+<div class="card">
+
+<p class="intro-text arabic">
+
+• Keluarga Besar Alm. KH Hudori
+
+
+<br><br>
+
+• Keluarga Besar
+Pon-Pes Nurul Ittihaady
+
+
+</p>
+
+<p class="translate-small"
+style="
+margin-top:18px;
+text-align:center;
+line-height:2;
+">
+
+• Keluarga Besar Alm. KH Hudori
+(Pon-Pes Koleang / Al Kuliyani)
+
+<br><br>
+
+• Keluarga Besar
+Pon-Pes Nurul Ittihaady
+(Tangerang)
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===== TURUT MENGUNDANG ===== -->
+
+<section class="section reveal">
+
+<div class="container">
+
+<p class="section-label">
+TURUT MENGUNDANG
+</p>
+
+<h2 class="section-title arabic">
+المدعوون الكرام
+</h2>
+
+<div class="invite-grid">
+
+<!-- PIHAK PEREMPUAN -->
+
+<div class="invite-card">
+
+<h3 class="invite-title arabic">
+من جهة العروس
+</h3>
+
+<p class="invite-subtitle">
+(Keluarga Pihak Perempuan)
+</p>
+
+<div class="invite-line"></div>
+
+<p class="invite-text arabic">
+
+• Keluarga Besar Buyut KH. Muksam
+
+<br><br>
+
+• Keluarga Besar Mama Abdussalam
+
+
+<br><br>
+
+• Keluarga Besar Bani Haji Sarman
+
+
+<br><br>
+
+• Keluarga Besar Bani Abdullah
+
+
+<br><br>
+
+• Keluarga Besar Mama Tua Bpk Sarimin
+
+<br><br>
+
+• Keluarga Besar SD Islam Bismillah
+
+
+<br><br>
+
+• Yayasan Baitul Yatama Al-Jannah
+
+</p>
+
+</div>
+
+<!-- PIHAK LAKI -->
+
+<div class="invite-card">
+
+<h3 class="invite-title arabic">
+من جهة العريس
+</h3>
+
+<p class="invite-subtitle">
+(Keluarga Pihak Laki-Laki)
+</p>
+
+<div class="invite-line"></div>
+
+<p class="invite-text arabic">
+
+• Keluarga Besar Alm. Bpk Suratno
+
+
+<br><br>
+
+• Keluarga Besar Almh. Ibu Suprapti
+
+
+<br><br>
+
+• Keluarga Besar SD Syaikh Yusuf
+
+
+<br><br>
+
+• Bpk Rusdi Slamet
+
+<br><br>
+
+• Bpk Aiptu Yudi Ferdian
+
+<br><br>
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
 <!-- POPUP -->
 
 <div id="popup" class="popup-overlay">
@@ -1747,6 +2447,153 @@ PESAN
 <div class="popup-card">
 
 <div id="popupText"></div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===== PESAN UNTUK MEMPELAI ===== -->
+
+<section class="section reveal">
+
+<div class="container">
+
+<p class="section-label">
+PESAN UNTUK MEMPELAI
+</p>
+
+<h2 class="section-title arabic">
+رسائل للعروسين
+</h2>
+
+<div class="chat-wrap">
+
+<!-- CHAT 1 -->
+
+<div class="chat-card">
+
+<div class="chat-header">
+
+<div class="chat-avatar">
+A
+</div>
+
+<div>
+
+<h4 class="chat-username">
+@annisaaa_
+</h4>
+
+<p class="chat-time">
+baru saja
+</p>
+
+</div>
+
+</div>
+
+<p class="chat-message">
+MasyaAllah 🥺
+Semoga jadi keluarga yang sakinah,
+mawadah, warahmah 🤍
+</p>
+
+</div>
+
+<!-- CHAT 2 -->
+
+<div class="chat-card">
+
+<div class="chat-header">
+
+<div class="chat-avatar">
+R
+</div>
+
+<div>
+
+<h4 class="chat-username">
+@rizkyprtm
+</h4>
+
+<p class="chat-time">
+2 menit lalu
+</p>
+
+</div>
+
+</div>
+
+<p class="chat-message">
+Selamat menempuh hidup baru ✨
+Semoga bahagia selalu sampai tua nanti
+</p>
+
+</div>
+
+<!-- CHAT 3 -->
+
+<div class="chat-card">
+
+<div class="chat-header">
+
+<div class="chat-avatar">
+N
+</div>
+
+<div>
+
+<h4 class="chat-username">
+@nurhayati
+</h4>
+
+<p class="chat-time">
+5 menit lalu
+</p>
+
+</div>
+
+</div>
+
+<p class="chat-message">
+Akhirnya hari bahagia datang juga 🥹
+Semoga selalu dilimpahkan keberkahan
+</p>
+
+</div>
+
+<!-- CHAT 4 -->
+
+<div class="chat-card">
+
+<div class="chat-header">
+
+<div class="chat-avatar">
+F
+</div>
+
+<div>
+
+<h4 class="chat-username">
+@fadil_story
+</h4>
+
+<p class="chat-time">
+10 menit lalu
+</p>
+
+</div>
+
+</div>
+
+<p class="chat-message">
+Bahagia terus untuk kedua mempelai 💍
+Doa terbaik selalu
+</p>
+
+</div>
 
 </div>
 
