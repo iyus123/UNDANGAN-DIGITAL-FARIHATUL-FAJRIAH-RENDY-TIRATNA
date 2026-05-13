@@ -419,7 +419,7 @@ text-align:center;
 
 background:
 linear-gradient(rgba(18,28,24,.84),rgba(18,28,24,.84)),
-url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200');
+url('./assets/images/prewed.jpg');
 
 background-size:cover;
 background-position:center;
@@ -1905,6 +1905,120 @@ opacity:.2;
 
 }
 
+/* ===== STEAMSPACE MINI BUTTON ===== */
+
+.steamspace-btn-small{
+
+position:fixed;
+
+left:14px;
+
+bottom:18px;
+
+z-index:999;
+
+display:flex;
+
+align-items:center;
+
+gap:8px;
+
+padding:10px 14px;
+
+border-radius:999px;
+
+text-decoration:none;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(12px);
+
+border:1px solid rgba(255,255,255,.06);
+
+box-shadow:0 8px 24px rgba(0,0,0,.18);
+
+transition:.3s ease;
+
+}
+
+.steamspace-btn-small:hover{
+
+transform:translateY(-3px);
+
+background:rgba(255,255,255,.08);
+
+}
+
+/* ICON */
+
+.steamspace-icon{
+
+width:24px;
+height:24px;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:linear-gradient(145deg,#ecd6a5,#c9a96b);
+
+font-size:11px;
+
+color:#2b2418;
+
+flex-shrink:0;
+
+}
+
+/* TEXT */
+
+.steamspace-btn-small span{
+
+font-size:10px;
+
+letter-spacing:.6px;
+
+color:#f1dcc0;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.steamspace-btn-small{
+
+left:12px;
+
+bottom:14px;
+
+padding:9px 12px;
+
+gap:7px;
+
+}
+
+.steamspace-btn-small span{
+
+font-size:9px;
+
+}
+
+.steamspace-icon{
+
+width:22px;
+height:22px;
+
+font-size:10px;
+
+}
+
+}
+
 </style>
 </head>
 <body>
@@ -2607,8 +2721,6 @@ Doa terbaik selalu
 
 <div class="container">
 
-<p class="section-label">RSVP</p>
-
 <h2 class="section-title">
 تأكيد الحضور
 </h2>
@@ -2844,6 +2956,23 @@ window.addEventListener('scroll', revealOnScroll);
 
 window.addEventListener('load', revealOnScroll);
 </script>
+
+<!-- ===== STEAMSPACE BUTTON ===== -->
+
+<a
+href="https://wa.me/62895320724689?text=Assalamu'alaikum%20SteamSpace%20✨%0A%0ASaya%20tertarik%20dengan%20jasa%20undangan%20digitalnya.%20Boleh%20minta%20info%20lebih%20lanjut%20untuk%20pembuatan%20website%20undangan%20seperti%20ini%3F%20😊"
+target="_blank"
+class="steamspace-btn-small">
+
+<div class="steamspace-icon">
+✦
+</div>
+
+<span>
+SteamSpace
+</span>
+
+</a>
 
 </body>
 </html>
