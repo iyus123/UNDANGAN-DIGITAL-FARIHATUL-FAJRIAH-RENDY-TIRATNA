@@ -1,501 +1,1560 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>دعوة زفاف | Undangan Pernikahan</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxury Arabic Wedding Invitation</title>
 
-  <!-- Font Arab -->
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      scroll-behavior:smooth;
-    }
+<style>
+html{scroll-behavior:smooth;}
 
-    body{
-      font-family:'Cairo', sans-serif;
-      background:#0f0f0f;
-      color:white;
-      overflow-x:hidden;
-      background-image:
-      radial-gradient(circle at top, rgba(201,168,94,0.25), transparent 40%),
-      linear-gradient(to bottom,#111,#050505);
-    }
+body{
+margin:0;
+font-family:'Montserrat',sans-serif;
+background:#f8f1f3;
+overflow-x:hidden;
+color:#4c3a4a;
+}
 
-    section{
-      min-height:100vh;
-      padding:70px 20px;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      position:relative;
-    }
+.arabic{
+font-family:'Amiri',serif;
+}
 
-    .gold{
-      color:#d4b06a;
-    }
+/* SIMPLE COVER */
 
-    .arabic{
-      font-family:'Amiri', serif;
-      font-size:38px;
-      line-height:1.9;
-      animation:fadeUp 1.4s ease;
-    }
+.simple-cover{
+position:fixed;
+inset:0;
+z-index:99999;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:20px;
+overflow-y:auto;
+background:linear-gradient(135deg,#15241e,#22362f);
+}
 
-    .indo{
-      margin-top:12px;
-      font-size:14px;
-      opacity:0.8;
-      max-width:330px;
-      line-height:1.8;
-      animation:fadeUp 2s ease;
-    }
+.simple-pattern{
+position:absolute;
+inset:0;
+background:url('https://www.transparenttextures.com/patterns/arabesque.png');
+opacity:.04;
+}
 
-    h1{
-      font-family:'Amiri', serif;
-      font-size:54px;
-      color:#d4b06a;
-      margin-bottom:20px;
-      animation:zoomIn 1.5s ease;
-    }
+.simple-box{
+position:relative;
+z-index:2;
+width:min(92%,520px);
+padding:45px 30px;
+border-radius:32px;
+text-align:center;
+background:rgba(255,255,255,.04);
+backdrop-filter:blur(14px);
+border:1px solid rgba(231,211,167,.12);
+}
 
-    .ornament{
-      width:160px;
-      height:160px;
-      border:2px solid rgba(212,176,106,.5);
-      border-radius:50%;
-      position:absolute;
-      animation:spin 18s linear infinite;
-      opacity:0.2;
-    }
+.mini-arabic{
+font-size:20px;
+line-height:1.8;
+color:#d9be82;
+margin-bottom:22px;
+}
 
-    .ornament::before{
-      content:'☪';
-      position:absolute;
-      top:50%;
-      left:50%;
-      transform:translate(-50%,-50%);
-      font-size:60px;
-      color:#d4b06a;
-    }
+.simple-title{
+font-family:'Cinzel',serif;
+font-size:18px;
+letter-spacing:5px;
+font-weight:500;
+color:#d9be82;
+margin-bottom:25px;
+text-transform:uppercase;
+}
 
-    .card{
-      background:rgba(255,255,255,0.05);
-      backdrop-filter:blur(10px);
-      border:1px solid rgba(212,176,106,0.3);
-      border-radius:25px;
-      padding:30px 25px;
-      width:100%;
-      max-width:360px;
-      box-shadow:0 0 30px rgba(0,0,0,0.4);
-      animation:fadeUp 1.5s ease;
-    }
+.simple-couple{
+font-family:'Great Vibes',cursive;
+font-size:clamp(52px,8vw,90px);
+line-height:1.15;
+font-weight:400;
+color:#fff5da;
+margin-bottom:25px;
+}
 
-    .divider{
-      width:80px;
-      height:2px;
-      background:#d4b06a;
-      margin:20px auto;
-    }
+.simple-quote{
+font-size:15px;
+line-height:2;
+color:#efe5d6;
+margin-bottom:35px;
+font-style:italic;
+}
 
-    .btn{
-      margin-top:30px;
-      padding:14px 28px;
-      border:none;
-      border-radius:40px;
-      background:linear-gradient(45deg,#d4b06a,#f0d28f);
-      color:#111;
-      font-weight:bold;
-      font-size:15px;
-      cursor:pointer;
-      transition:.4s;
-      box-shadow:0 0 20px rgba(212,176,106,.4);
-    }
+.simple-invite{
+padding:18px;
+border-radius:22px;
+background:rgba(255,255,255,.03);
+margin-bottom:35px;
+}
 
-    .btn:hover{
-      transform:scale(1.05);
-    }
+.simple-invite p{
+font-size:12px;
+letter-spacing:3px;
+color:#d9be82;
+margin-bottom:10px;
+}
 
-    .flower{
-      position:absolute;
-      width:200px;
-      opacity:0.07;
-      pointer-events:none;
-    }
+.simple-invite h3{
+font-size:20px;
+font-weight:600;
+color:#fff7df;
+margin-bottom:8px;
+}
 
-    .flower.top{
-      top:-20px;
-      right:-50px;
-    }
+.simple-invite span{
+font-size:13px;
+letter-spacing:2px;
+color:#ccb78f;
+}
 
-    .flower.bottom{
-      bottom:-20px;
-      left:-50px;
-      transform:rotate(180deg);
-    }
+.simple-btn{
+padding:16px 38px;
+border:none;
+border-radius:999px;
+font-weight:700;
+cursor:pointer;
+background:linear-gradient(145deg,#ecd6a5,#c7a062);
+color:#2d2417;
+transition:.4s;
+}
 
-    .countdown{
-      display:flex;
-      gap:15px;
-      margin-top:30px;
-    }
+.simple-btn:hover{
+transform:translateY(-4px);
+}
 
-    .time-box{
-      background:rgba(255,255,255,0.05);
-      border:1px solid rgba(212,176,106,.3);
-      padding:15px;
-      border-radius:18px;
-      width:70px;
-    }
+/* HERO */
 
-    .time-box h2{
-      color:#d4b06a;
-      font-size:28px;
-    }
+.hero{
+position:relative;
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:
+linear-gradient(rgba(18,28,24,.82),rgba(18,28,24,.82)),
+url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1600');
+background-size:cover;
+background-position:center;
+overflow:hidden;
+}
 
-    .time-box span{
-      font-size:12px;
-      opacity:.8;
-    }
+.hero::before{
+content:'';
+position:absolute;
+inset:0;
+background:url('https://www.transparenttextures.com/patterns/arabesque.png');
+opacity:.06;
+}
 
-    .music{
-      position:fixed;
-      bottom:20px;
-      left:20px;
-      z-index:99;
-      width:55px;
-      height:55px;
-      border-radius:50%;
-      background:#d4b06a;
-      color:#111;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:22px;
-      box-shadow:0 0 20px rgba(212,176,106,.5);
-      animation:pulse 2s infinite;
-    }
+.hero-content{
+position:relative;
+z-index:2;
+text-align:center;
+padding:20px;
+max-width:1000px;
+color:white;
+}
 
-    @keyframes fadeUp{
-      from{
-        opacity:0;
-        transform:translateY(40px);
-      }
-      to{
-        opacity:1;
-        transform:translateY(0);
-      }
-    }
+.main-title{
+font-family:'Great Vibes',cursive;
+font-size:clamp(70px,10vw,140px);
+line-height:1.15;
+color:#f7e7b0;
+margin:30px 0;
+}
 
-    @keyframes zoomIn{
-      from{
-        opacity:0;
-        transform:scale(.7);
-      }
-      to{
-        opacity:1;
-        transform:scale(1);
-      }
-    }
+.hero-ayat{
+font-size:clamp(22px,4vw,38px);
+line-height:2;
+color:#fff4da;
+margin-top:35px;
+}
 
-    @keyframes spin{
-      from{
-        transform:rotate(0deg);
-      }
-      to{
-        transform:rotate(360deg);
-      }
-    }
+.translate{
+line-height:2;
+color:#9f8994;
+}
 
-    @keyframes pulse{
-      0%{
-        transform:scale(1);
-      }
-      50%{
-        transform:scale(1.08);
-      }
-      100%{
-        transform:scale(1);
-      }
-    }
+.section{
+padding:120px 24px;
+}
 
-    .fade-scroll{
-      opacity:0;
-      transform:translateY(60px);
-      transition:1s;
-    }
+.soft{background:#fff9fb;}
 
-    .fade-scroll.active{
-      opacity:1;
-      transform:translateY(0);
-    }
+.container{max-width:1200px;margin:auto;}
+.container-sm{max-width:920px;margin:auto;}
 
-    @media(max-width:480px){
+.section-head{
+text-align:center;
+margin-bottom:70px;
+}
 
-      h1{
-        font-size:42px;
-      }
+.section-sub{
+letter-spacing:5px;
+font-size:13px;
+color:#c8a96b;
+margin-bottom:15px;
+}
 
-      .arabic{
-        font-size:30px;
-      }
+.section-title{
+font-size:clamp(42px,6vw,80px);
+margin:0;
+}
 
-      .indo{
-        font-size:13px;
-      }
+.card{
+background:white;
+padding:55px;
+border-radius:40px;
+box-shadow:0 20px 60px rgba(0,0,0,.05);
+}
 
-      .card{
-        padding:28px 20px;
-      }
+.intro-header{
+text-align:center;
+cursor:pointer;
+}
 
-    }
+.intro-main{
+font-family:'Great Vibes',cursive;
+font-size:clamp(75px,9vw,130px);
+line-height:1.1;
+}
 
-  </style>
+.intro-content{
+max-height:0;
+overflow:hidden;
+opacity:0;
+transition:max-height 1.2s cubic-bezier(.22,1,.36,1), opacity .8s ease;
+}
+
+.intro-content.show{
+max-height:1400px;
+opacity:1;
+margin-top:50px;
+}
+
+.intro-text{
+font-size:33px;
+line-height:2.5;
+text-align:center;
+}
+
+.swap-wrap{
+margin-top:55px;
+display:flex;
+justify-content:center;
+}
+
+.swap-btn{
+width:76px;
+height:76px;
+border-radius:999px;
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+font-size:34px;
+background:linear-gradient(145deg,#ecd6a5,#c7a062);
+color:#2a2418;
+animation:floaty 2.5s ease-in-out infinite;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+@keyframes floaty{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(12px);}
+}
+
+.couple-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:35px;
+}
+
+.couple-card{
+background:white;
+padding:55px 40px;
+border-radius:40px;
+text-align:center;
+box-shadow:0 20px 60px rgba(0,0,0,.05);
+}
+
+.couple-img{
+width:240px;
+height:240px;
+object-fit:cover;
+border-radius:999px;
+border:6px solid #e7d3a7;
+margin-bottom:28px;
+}
+
+.gold{color:#c8a96b;}
+
+.couple-name{
+font-size:42px;
+margin:10px 0;
+}
+
+.couple-desc{
+font-size:20px;
+line-height:2;
+}
+
+.event-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:35px;
+}
+
+.event-card{
+background:white;
+padding:60px 40px;
+border-radius:40px;
+text-align:center;
+box-shadow:0 20px 60px rgba(0,0,0,.05);
+}
+
+.event-title{
+font-size:38px;
+color:#c8a96b;
+margin-bottom:25px;
+}
+
+.event-date{
+font-size:22px;
+line-height:2;
+}
+
+.divider{
+width:100px;
+height:2px;
+background:linear-gradient(to right,transparent,#d9be82,transparent);
+margin:35px auto;
+}
+
+.location-grid{
+display:grid;
+grid-template-columns:420px 1fr;
+gap:35px;
+}
+
+.location-card{
+background:white;
+padding:50px 40px;
+border-radius:40px;
+text-align:center;
+box-shadow:0 20px 60px rgba(0,0,0,.05);
+}
+
+.map-frame{
+overflow:hidden;
+border-radius:40px;
+min-height:520px;
+}
+
+.map-frame iframe{
+width:100%;
+height:100%;
+border:none;
+}
+
+.secret-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
+}
+
+.secret-btn{
+padding:45px;
+border:none;
+border-radius:30px;
+background:white;
+font-size:22px;
+font-family:'Amiri',serif;
+cursor:pointer;
+box-shadow:0 10px 40px rgba(0,0,0,.05);
+}
+
+.rsvp-form{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.rsvp-form input,
+.rsvp-form select,
+.rsvp-form textarea{
+padding:22px;
+border:none;
+border-radius:22px;
+background:white;
+font-family:'Montserrat',sans-serif;
+}
+
+.rsvp-form button{
+padding:22px;
+border:none;
+border-radius:22px;
+font-weight:700;
+background:linear-gradient(145deg,#ecd6a5,#c7a062);
+}
+
+.footer{
+padding:110px 24px;
+background:#2f4037;
+text-align:center;
+color:white;
+}
+
+.footer-text{
+font-size:42px;
+color:#f7e7b0;
+}
+
+.music-btn{
+position:fixed;
+right:25px;
+bottom:25px;
+width:82px;
+height:82px;
+border-radius:999px;
+border:none;
+background:linear-gradient(145deg,#ecd6a5,#c7a062);
+font-size:28px;
+z-index:999;
+animation:spin 8s linear infinite;
+}
+
+@keyframes spin{
+100%{transform:rotate(360deg);}
+}
+
+.popup-overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.55);
+display:none;
+align-items:center;
+justify-content:center;
+padding:20px;
+z-index:9999;
+}
+
+.popup-box{
+background:#4d3c4b;
+padding:50px;
+border-radius:35px;
+max-width:650px;
+width:100%;
+}
+
+.popup-arabic{
+font-family:'Amiri',serif;
+font-size:34px;
+line-height:2;
+text-align:center;
+color:#fff4d8;
+}
+
+
+
+
+@media(max-width:768px){
+
+html,body{
+overflow-x:hidden;
+}
+
+/* COVER */
+
+.simple-cover{
+padding:14px;
+}
+
+.simple-box{
+width:100%;
+max-width:340px;
+padding:26px 18px;
+border-radius:24px;
+}
+
+.mini-arabic{
+font-size:16px;
+line-height:1.7;
+margin-bottom:16px;
+}
+
+.simple-title{
+font-size:11px;
+letter-spacing:3px;
+margin-bottom:16px;
+}
+
+.simple-couple{
+font-size:42px;
+line-height:1.15;
+margin-bottom:16px;
+}
+
+.simple-quote{
+font-size:12px;
+line-height:1.8;
+margin-bottom:22px;
+}
+
+.simple-invite{
+padding:14px;
+border-radius:18px;
+margin-bottom:22px;
+}
+
+.simple-invite p{
+font-size:10px;
+letter-spacing:2px;
+margin-bottom:6px;
+}
+
+.simple-invite h3{
+font-size:17px;
+line-height:1.4;
+margin-bottom:4px;
+}
+
+.simple-invite span{
+font-size:10px;
+}
+
+.simple-btn{
+width:100%;
+padding:14px;
+font-size:13px;
+}
+
+/* HERO */
+
+.hero-content{
+padding:22px 16px;
+}
+
+.main-title{
+font-size:52px;
+line-height:1.12;
+margin:18px 0;
+}
+
+.hero-ayat{
+font-size:18px;
+line-height:1.8;
+margin-top:20px;
+}
+
+.translate{
+font-size:13px;
+line-height:1.8;
+}
+
+/* SECTION */
+
+.section{
+padding:65px 16px;
+}
+
+.section-head{
+margin-bottom:40px;
+}
+
+.section-sub{
+font-size:10px;
+letter-spacing:2px;
+margin-bottom:10px;
+}
+
+.section-title{
+font-size:32px;
+line-height:1.2;
+}
+
+/* CARD */
+
+.card,
+.couple-card,
+.event-card,
+.location-card{
+padding:22px 18px;
+border-radius:24px;
+}
+
+/* INTRO */
+
+.intro-main{
+font-size:54px;
+}
+
+.intro-text{
+font-size:18px;
+line-height:2;
+}
+
+/* GRID */
+
+.couple-grid,
+.event-grid,
+.location-grid,
+.secret-grid{
+grid-template-columns:1fr;
+gap:18px;
+}
+
+/* COUPLE */
+
+.couple-img{
+width:140px;
+height:140px;
+margin-bottom:18px;
+}
+
+.couple-name{
+font-size:24px;
+}
+
+.couple-desc{
+font-size:16px;
+line-height:1.8;
+}
+
+/* EVENT */
+
+.event-title{
+font-size:24px;
+margin-bottom:16px;
+}
+
+.event-date{
+font-size:18px;
+line-height:1.8;
+}
+
+.divider{
+margin:20px auto;
+}
+
+/* LOCATION */
+
+.location-card p.arabic{
+font-size:18px !important;
+line-height:1.8 !important;
+}
+
+.map-frame{
+min-height:260px;
+}
+
+/* SECRET */
+
+.secret-btn{
+padding:20px 14px;
+font-size:18px;
+border-radius:18px;
+}
+
+/* RSVP */
+
+.rsvp-form input,
+.rsvp-form select,
+.rsvp-form textarea{
+padding:16px;
+font-size:13px;
+border-radius:16px;
+}
+
+.rsvp-form button{
+padding:16px;
+font-size:13px;
+border-radius:16px;
+}
+
+/* SWAP */
+
+.swap-wrap{
+margin-top:30px;
+}
+
+.swap-btn{
+width:50px;
+height:50px;
+font-size:22px;
+}
+
+/* MUSIC */
+
+.music-btn{
+width:58px;
+height:58px;
+right:14px;
+bottom:14px;
+font-size:20px;
+}
+
+/* POPUP */
+
+.popup-box{
+padding:24px 18px;
+border-radius:20px;
+}
+
+.popup-arabic{
+font-size:20px;
+line-height:1.8;
+}
+
+/* FOOTER */
+
+.footer{
+padding:55px 16px;
+}
+
+.footer-text{
+font-size:20px;
+line-height:1.8;
+}
+
+}
+
+
+.simple-cover{
+padding:16px;
+align-items:center;
+}
+
+.simple-box{
+
+width:100%;
+max-width:360px;
+
+padding:28px 18px;
+
+border-radius:26px;
+
+margin:auto;
+
+box-sizing:border-box;
+
+}
+
+.mini-arabic{
+
+font-size:18px;
+
+line-height:1.7;
+
+margin-bottom:18px;
+
+}
+
+.simple-title{
+
+font-size:12px;
+
+letter-spacing:3px;
+
+margin-bottom:18px;
+
+}
+
+.simple-couple{
+
+font-size:46px;
+
+line-height:1.12;
+
+margin-bottom:18px;
+
+}
+
+.simple-quote{
+
+font-size:13px;
+
+line-height:1.8;
+
+margin-bottom:24px;
+
+padding:0 6px;
+
+}
+
+.simple-invite{
+
+padding:14px 16px;
+
+border-radius:18px;
+
+margin-bottom:24px;
+
+}
+
+.simple-invite p{
+
+font-size:10px;
+
+letter-spacing:2px;
+
+margin-bottom:8px;
+
+}
+
+.simple-invite h3{
+
+font-size:18px;
+
+line-height:1.4;
+
+margin-bottom:6px;
+
+}
+
+.simple-invite span{
+
+font-size:11px;
+
+letter-spacing:1px;
+
+}
+
+.simple-btn{
+
+width:100%;
+
+padding:16px;
+
+font-size:14px;
+
+border-radius:999px;
+
+}
+
+.hero-content{
+padding:28px 18px;
+}
+
+.main-title{
+font-size:58px;
+line-height:1.1;
+}
+
+.hero-ayat{
+font-size:20px;
+line-height:1.8;
+}
+
+.section{
+padding:80px 18px;
+}
+
+.section-title{
+font-size:38px;
+}
+
+.intro-main{
+font-size:60px;
+}
+
+.intro-text{
+font-size:21px;
+line-height:2.1;
+}
+
+.couple-grid,
+.event-grid,
+.location-grid,
+.secret-grid{
+grid-template-columns:1fr;
+gap:22px;
+}
+
+.card,
+.couple-card,
+.event-card,
+.location-card{
+padding:26px 20px;
+border-radius:26px;
+}
+
+.couple-img{
+width:160px;
+height:160px;
+}
+
+.couple-name{
+font-size:22px;
+}
+
+.couple-desc{
+font-size:18px;
+line-height:1.8;
+}
+
+.event-title{
+font-size:22px;
+}
+
+.event-date{
+font-size:19px;
+}
+
+.location-card p.arabic{
+font-size:22px !important;
+}
+
+.map-frame{
+min-height:300px;
+}
+
+.secret-btn{
+padding:24px 16px;
+font-size:19px;
+border-radius:22px;
+}
+
+.swap-btn{
+width:58px;
+height:58px;
+font-size:22px;
+}
+
+.music-btn{
+width:64px;
+height:64px;
+right:16px;
+bottom:16px;
+font-size:19px;
+}
+
+.popup-box{
+padding:28px 20px;
+border-radius:24px;
+}
+
+.popup-arabic{
+font-size:20px;
+line-height:1.8;
+}
+
+.footer{
+padding:70px 18px;
+}
+
+.footer-text{
+font-size:22px;
+line-height:1.7;
+}
+
+}
+
+
+.hero-content{
+padding:30px 18px;
+}
+
+.main-title{
+font-size:60px;
+line-height:1.1;
+}
+
+.hero-ayat{
+font-size:19px;
+line-height:1.9;
+}
+
+.simple-box{
+width:100%;
+padding:38px 22px;
+border-radius:28px;
+margin:20px 0;
+}
+
+.simple-couple{
+font-size:64px;
+line-height:1.1;
+}
+
+.simple-title{
+font-size:14px;
+letter-spacing:4px;
+}
+
+.simple-quote{
+font-size:14px;
+line-height:1.9;
+}
+
+.simple-invite{
+padding:16px;
+}
+
+.simple-invite h3{
+font-size:20px;
+line-height:1.5;
+}
+
+.simple-btn{
+width:100%;
+padding:18px;
+font-size:15px;
+}
+
+.section{
+padding:80px 18px;
+}
+
+.section-title{
+font-size:48px;
+line-height:1.2;
+}
+
+.section-sub{
+font-size:11px;
+letter-spacing:3px;
+}
+
+.card,
+.couple-card,
+.event-card,
+.location-card{
+padding:28px 22px;
+border-radius:28px;
+}
+
+.intro-main{
+font-size:78px;
+}
+
+.intro-text{
+font-size:19px;
+line-height:2.2;
+}
+
+.couple-grid,
+.event-grid,
+.location-grid,
+.secret-grid{
+grid-template-columns:1fr;
+gap:24px;
+}
+
+.couple-img{
+width:170px;
+height:170px;
+}
+
+.couple-name{
+font-size:34px;
+line-height:1.3;
+}
+
+.couple-desc{
+font-size:20px;
+line-height:1.9;
+}
+
+.event-title{
+font-size:32px;
+}
+
+.event-date{
+font-size:20px;
+line-height:1.8;
+}
+
+.location-card p.arabic{
+font-size:24px !important;
+}
+
+.map-frame{
+min-height:320px;
+}
+
+.secret-btn{
+padding:28px 18px;
+font-size:20px;
+border-radius:24px;
+}
+
+.rsvp-form input,
+.rsvp-form select,
+.rsvp-form textarea{
+padding:18px;
+font-size:15px;
+}
+
+.rsvp-form button{
+padding:18px;
+font-size:15px;
+}
+
+.swap-btn{
+width:62px;
+height:62px;
+font-size:28px;
+}
+
+.music-btn{
+width:68px;
+height:68px;
+right:18px;
+bottom:18px;
+font-size:20px;
+}
+
+.popup-box{
+padding:32px 22px;
+border-radius:28px;
+}
+
+.popup-arabic{
+font-size:22px;
+line-height:1.8;
+}
+
+.footer{
+padding:80px 20px;
+}
+
+.footer-text{
+font-size:28px;
+line-height:1.8;
+}
+
+}
+
+
+.card,
+.couple-card,
+.event-card,
+.location-card{
+padding:35px;
+}
+
+.intro-text{
+font-size:20px;
+}
+
+.couple-img{
+width:190px;
+height:190px;
+}
+
+.section{
+padding:90px 20px;
+}
+
+.footer-text{
+font-size:28px;
+}
+
+}
+</style>
 </head>
-
 <body>
 
-  <!-- MUSIC -->
-  <audio autoplay loop>
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_115b9b0a4c.mp3?filename=arabic-background-music-110997.mp3" type="audio/mp3">
-  </audio>
+<section id="cover" class="simple-cover">
+<div class="simple-pattern"></div>
+
+<div class="simple-box">
+
+<p class="mini-arabic arabic">
+بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
+</p>
+
+<h1 class="simple-title">
+The Wedding Of
+</h1>
+
+<h2 class="simple-couple">
+Farihatul Fajriah
+<br>
+&
+<br>
+Rendy Tiratna
+</h2>
 
-  <!-- COVER -->
-  <section>
+<p class="simple-quote">
+“Two souls united in love,
+under the blessing of Allah.”
+</p>
+
+<div class="simple-invite">
+<p>Kepada Yth.</p>
+<h3>Bapak/Ibu/Saudara/i</h3>
+<span>Di Tempat</span>
+</div>
+
+<button class="simple-btn" onclick="openInvitation()">
+Buka Undangan
+</button>
+
+</div>
+</section>
+
+<section class="hero">
+<div class="hero-content">
+
+<p class="arabic" style="font-size:42px;color:#f7e7b0;">
+بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
+</p>
+
+<h1 class="main-title">
+فريحة الفجرية
+<br>&<br>
+ريندي تيراتنا
+</h1>
+
+<p style="font-size:18px;letter-spacing:2px;">
+Farihatul Fajriah & Rendy Tiratna
+</p>
+
+<p class="arabic hero-ayat">
+وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا
+لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً
+</p>
+
+<div class="swap-wrap">
+<a href="#intro" class="swap-btn">↓</a>
+</div>
 
-    <div class="ornament"></div>
+</div>
+</section>
 
-    <div class="card">
+<section id="intro" class="section soft">
+<div class="container-sm">
+
+<div class="intro-header" onclick="toggleIntro()">
+<p class="section-sub arabic">كلمة ترحيبية</p>
+
+<h2 class="intro-main">
+رسالة المحبة
+</h2>
 
-      <div class="arabic gold">
-        بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ
-      </div>
+<p class="translate">
+Klik untuk membuka kata pengantar ↓
+</p>
+</div>
 
-      <div class="indo">
-        Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang
-      </div>
+<div id="introContent" class="intro-content">
+<div class="card">
 
-      <div class="divider"></div>
+<p class="arabic intro-text">
+بِكُلِّ مَحَبَّةٍ وَسُرُورٍ نَدْعُوكُمْ لِمُشَارَكَتِنَا
+فِي أَجْمَلِ لَحَظَاتِ عُمُرِنَا.
+</p>
 
-      <h1>
-        دعوة زفاف
-      </h1>
+<p class="translate" style="margin-top:35px;">
+Dengan penuh cinta dan kebahagiaan,
+kami mengundang Anda untuk menjadi bagian dari momen terindah dalam hidup kami.
+</p>
 
-      <div class="indo">
-        Undangan Pernikahan Islami
-      </div>
+<div class="swap-wrap">
+<a href="#couple" class="swap-btn">↓</a>
+</div>
 
-      <button class="btn" onclick="document.getElementById('mempelai').scrollIntoView()">
-        افتح الدعوة
-      </button>
+</div>
+</div>
+</div>
+</section>
 
-    </div>
+<section id="couple" class="section">
+<div class="container">
 
-  </section>
+<div class="section-head">
+<p class="section-sub arabic">العروس والعريس</p>
+<h2 class="section-title">Mempelai</h2>
+</div>
 
-  <!-- MEMPELAI -->
-  <section id="mempelai" class="fade-scroll">
+<div class="couple-grid">
 
-    <div class="card">
+<div class="couple-card">
+<img src="./assets/images/bride.jpg" class="couple-img">
 
-      <div class="arabic gold">
-        السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ
-      </div>
+<h3 class="arabic gold" style="font-size:34px;">العروس</h3>
 
-      <div class="indo">
-        Assalamu'alaikum Warahmatullahi Wabarakatuh
-      </div>
+<h2 class="arabic couple-name">
+فريحة الفجرية
+</h2>
 
-      <div class="divider"></div>
+<p class="translate">Farihatul Fajriah</p>
 
-      <div class="arabic">
-        ندعوكم لحضور حفل زفافنا المبارك
-      </div>
+<p class="arabic couple-desc">
+الابنة الأولى
+<br>
+للحاج أحمد سهرواردي
+<br>
+وأم نور الحفصة
+</p>
+</div>
 
-      <div class="indo">
-        Kami mengundang Anda untuk menghadiri acara pernikahan kami
-      </div>
+<div class="couple-card">
+<img src="./assets/images/groom.jpg" class="couple-img">
 
-      <div style="margin-top:35px">
+<h3 class="arabic gold" style="font-size:34px;">العريس</h3>
 
-        <div class="arabic gold" style="font-size:42px">
-          فجرية
-        </div>
+<h2 class="arabic couple-name">
+ريندي تيراتنا
+</h2>
 
-        <div class="indo">
-          Fajriyah
-        </div>
+<p class="translate">Rendy Tiratna</p>
 
-        <div style="margin:15px 0;font-size:28px;color:#d4b06a">
-          &
-        </div>
+<p class="arabic couple-desc">
+الابن الأول
+<br>
+للمرحوم سورتنو
+<br>
+والمرحومة سوبرابتي
+</p>
+</div>
 
-        <div class="arabic gold" style="font-size:42px">
-          أحمد
-        </div>
+</div>
 
-        <div class="indo">
-          Ahmad
-        </div>
+<div class="swap-wrap">
+<a href="#event" class="swap-btn">↓</a>
+</div>
 
-      </div>
+</div>
+</section>
 
-    </div>
+<section id="event" class="section soft">
+<div class="container">
 
-  </section>
+<div class="section-head">
+<p class="section-sub arabic">برنامج الحفل</p>
+<h2 class="section-title">مراسم الزفاف</h2>
+</div>
 
-  <!-- AYAT -->
-  <section class="fade-scroll">
+<div class="event-grid">
 
-    <div class="card">
+<div class="event-card">
+<div style="font-size:60px;">🕌</div>
 
-      <div class="arabic gold">
-        وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا
-      </div>
+<h3 class="arabic event-title">
+عقد القران
+</h3>
 
-      <div class="indo">
-        Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan pasangan-pasangan untukmu agar kamu merasa tenteram kepadanya.
-      </div>
+<p class="arabic event-date">
+السبت ٢٠ ذو الحجة ١٤٤٧ هـ
+</p>
 
-      <div class="divider"></div>
+<p class="translate">
+Sabtu, 06 Juni 2026
+</p>
 
-      <div class="indo">
-        QS. Ar-Rum : 21
-      </div>
+<div class="divider"></div>
 
-    </div>
+<p class="arabic event-date">
+الساعة 09:00 صباحاً
+</p>
+</div>
 
-  </section>
+<div class="event-card">
+<div style="font-size:60px;">✨</div>
 
-  <!-- ACARA -->
-  <section class="fade-scroll">
+<h3 class="arabic event-title">
+حفل الاستقبال
+</h3>
 
-    <div class="card">
+<p class="arabic event-date">
+السبت ٢٠ ذو الحجة ١٤٤٧ هـ
+</p>
 
-      <div class="arabic gold">
-        موعد الحفل
-      </div>
+<p class="translate">
+Sabtu, 06 Juni 2026
+</p>
 
-      <div class="indo">
-        Waktu Acara
-      </div>
+<div class="divider"></div>
 
-      <div class="divider"></div>
+<p class="arabic event-date">
+الساعة 10:00 صباحاً
+</p>
+</div>
 
-      <div class="arabic">
-        الأحد، ٢٥ مايو ٢٠٢٦
-      </div>
+</div>
 
-      <div class="indo">
-        Minggu, 25 Mei 2026
-      </div>
+<div class="swap-wrap">
+<a href="#location" class="swap-btn">↓</a>
+</div>
 
-      <div style="margin-top:25px" class="arabic">
-        الساعة العاشرة صباحاً
-      </div>
+</div>
+</section>
 
-      <div class="indo">
-        Pukul 10.00 WIB
-      </div>
+<section id="location" class="section">
+<div class="container">
 
-      <div class="countdown">
+<div class="section-head">
+<p class="section-sub arabic">موقع الحفل</p>
+<h2 class="section-title">مكان الزفاف</h2>
+</div>
 
-        <div class="time-box">
-          <h2 id="days">00</h2>
-          <span>Hari</span>
-        </div>
+<div class="location-grid">
 
-        <div class="time-box">
-          <h2 id="hours">00</h2>
-          <span>Jam</span>
-        </div>
+<div class="location-card">
+<div style="font-size:60px;">📍</div>
 
-        <div class="time-box">
-          <h2 id="minutes">00</h2>
-          <span>Menit</span>
-        </div>
+<h3 class="arabic gold" style="font-size:40px;">
+في منزل العروس
+</h3>
 
-      </div>
+<div class="divider"></div>
 
-    </div>
+<p class="arabic" style="font-size:22px;line-height:2;">
+معهد الكلياني الإسلامي
+<br>
+سيتامان بادارينتشانغ
+</p>
 
-  </section>
+<p class="translate" style="margin-top:20px;">
+Pon-Pes Koleang (Al Kuliyani)
+<br>
+Citaman - Padarincang
+</p>
+</div>
 
-  <!-- PENUTUP -->
-  <section class="fade-scroll">
+<div class="map-frame">
+<iframe src="https://maps.google.com/maps?q=padarincang&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+</div>
 
-    <div class="card">
+</div>
 
-      <div class="arabic gold">
-        شكراً لحضوركم ودعائكم
-      </div>
+<div class="swap-wrap">
+<a href="#secret" class="swap-btn">↓</a>
+</div>
 
-      <div class="indo">
-        Terima kasih atas kehadiran dan doa restunya
-      </div>
+</div>
+</section>
 
-      <div class="divider"></div>
+<section id="secret" class="section soft">
+<div class="container-sm">
 
-      <div class="arabic">
-        بارك الله لكم وبارك عليكم وجمع بينكما في خير
-      </div>
+<div class="section-head">
+<p class="section-sub arabic">رسائل خاصة</p>
+<h2 class="section-title">كلمات صغيرة لكم</h2>
+</div>
 
-      <div class="indo">
-        Semoga Allah memberkahi kalian dan menyatukan kalian dalam kebaikan
-      </div>
+<div class="secret-grid">
+<button class="secret-btn" onclick="openPopup(1)">رسالة ١</button>
+<button class="secret-btn" onclick="openPopup(2)">رسالة ٢</button>
+<button class="secret-btn" onclick="openPopup(3)">رسالة ٣</button>
+<button class="secret-btn" onclick="openPopup(4)">رسالة ٤</button>
+</div>
 
-    </div>
+<div class="swap-wrap">
+<a href="#rsvp" class="swap-btn">↓</a>
+</div>
 
-  </section>
+</div>
+</section>
 
-  <div class="music">
-    ♫
-  </div>
+<section id="rsvp" class="section">
+<div class="container-sm">
 
-  <script>
+<div class="section-head">
+<p class="section-sub arabic">تأكيد الحضور</p>
+<h2 class="section-title">الرجاء تأكيد حضوركم</h2>
+</div>
 
-    // SCROLL ANIMATION
-    const fades = document.querySelectorAll('.fade-scroll');
+<div class="card">
+<form class="rsvp-form">
 
-    window.addEventListener('scroll', () => {
+<input type="text" placeholder="Nama Lengkap">
 
-      fades.forEach(el => {
+<select>
+<option>Konfirmasi Kehadiran</option>
+<option>Hadir</option>
+<option>Tidak Hadir</option>
+</select>
 
-        const top = el.getBoundingClientRect().top;
+<textarea rows="5" placeholder="Ucapan dan doa"></textarea>
 
-        if(top < window.innerHeight - 100){
-          el.classList.add('active');
-        }
+<button type="submit">
+Kirim Konfirmasi ✨
+</button>
 
-      });
+</form>
+</div>
 
-    });
+</div>
+</section>
 
-    // COUNTDOWN
-    const targetDate = new Date("May 25, 2026 10:00:00").getTime();
+<footer class="footer">
+<p class="arabic footer-text">
+بارك الله لكما وبارك عليكما وجمع بينكما في خير
+</p>
+</footer>
 
-    setInterval(() => {
+<button class="music-btn" onclick="toggleMusic()">♫</button>
 
-      const now = new Date().getTime();
-      const distance = targetDate - now;
+<audio id="music" loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_8b3c1e4fd3.mp3?filename=arabic-background-music-110507.mp3">
+</audio>
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+<div id="popup" class="popup-overlay">
+<div class="popup-box" id="popupContent"></div>
+</div>
 
-      document.getElementById('days').innerHTML = days;
-      document.getElementById('hours').innerHTML = hours;
-      document.getElementById('minutes').innerHTML = minutes;
+<script>
+const music=document.getElementById('music');
 
-    },1000);
+function openInvitation(){
+const cover=document.getElementById('cover');
+cover.style.transition='1s';
+cover.style.opacity='0';
+cover.style.visibility='hidden';
+music.play().catch(()=>{});
+}
 
-  </script>
+function toggleMusic(){
+if(music.paused){music.play();}
+else{music.pause();}
+}
+
+function toggleIntro(){
+const content=document.getElementById('introContent');
+
+if(content.classList.contains('show')){
+content.classList.remove('show');
+}else{
+content.classList.add('show');
+
+setTimeout(()=>{
+content.scrollIntoView({
+behavior:'smooth',
+block:'start'
+});
+},300);
+}
+}
+
+const messages={
+1:`<div class="popup-arabic">أسعد الله أيامكم كما أسعدتم حضورنا 🤍</div>`,
+2:`<div class="popup-arabic">شكرًا لحضوركم ودعواتكم الجميلة ✨</div>`,
+3:`<div class="popup-arabic">نسأل الله أن يجمعنا دائمًا بالمحبة والخير 🌙</div>`,
+4:`<div class="popup-arabic">وجودكم يزيد فرحتنا نورًا وجمالًا 💍</div>`
+};
+
+function openPopup(id){
+document.getElementById('popup').style.display='flex';
+document.getElementById('popupContent').innerHTML=messages[id];
+}
+
+document.getElementById('popup').onclick=function(){
+this.style.display='none';
+}
+</script>
 
 </body>
 </html>
