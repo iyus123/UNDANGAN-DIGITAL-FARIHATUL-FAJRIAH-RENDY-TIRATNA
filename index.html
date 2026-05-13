@@ -782,15 +782,15 @@ color:#3f3438;
 
 }
 
-/* ===== FINAL LOCATION ===== */
+/* ===== LOCATION ===== */
 
 .location-layout{
 
 display:flex;
 
-align-items:stretch;
-
 gap:18px;
+
+align-items:stretch;
 
 margin-top:24px;
 
@@ -800,7 +800,7 @@ margin-top:24px;
 
 .location-card-custom{
 
-width:32%;
+width:34%;
 
 background:white;
 
@@ -808,7 +808,7 @@ padding:24px 18px;
 
 border-radius:28px;
 
-box-shadow:0 10px 24px rgba(0,0,0,.04);
+box-shadow:0 10px 24px rgba(0,0,0,.05);
 
 text-align:center;
 
@@ -822,7 +822,7 @@ justify-content:center;
 
 .location-icon{
 
-font-size:34px;
+font-size:36px;
 
 margin-bottom:14px;
 
@@ -834,7 +834,7 @@ font-size:28px;
 
 line-height:1.4;
 
-color:#c9a96b;
+color:var(--gold);
 
 margin-bottom:12px;
 
@@ -856,9 +856,7 @@ margin:16px auto;
 
 font-size:22px;
 
-line-height:2;
-
-color:#3f3438;
+line-height:1.9;
 
 margin-bottom:12px;
 
@@ -870,7 +868,7 @@ font-size:10px;
 
 line-height:1.8;
 
-letter-spacing:.3px;
+letter-spacing:.4px;
 
 color:#9d8a77;
 
@@ -880,15 +878,13 @@ color:#9d8a77;
 
 .location-map-custom{
 
-width:68%;
-
-aspect-ratio:1/1;
+width:66%;
 
 overflow:hidden;
 
 border-radius:28px;
 
-box-shadow:0 10px 24px rgba(0,0,0,.04);
+box-shadow:0 10px 24px rgba(0,0,0,.05);
 
 background:white;
 
@@ -900,65 +896,69 @@ width:100%;
 
 height:100%;
 
+min-height:100%;
+
 border:none;
 
 display:block;
 
 }
 
-/* MOBILE */
+/* ===== MOBILE ===== */
 
 @media(max-width:768px){
 
 .location-layout{
 
-display:flex;
+flex-direction:column;
 
-flex-direction:row;
-
-gap:12px;
-
-align-items:stretch;
+gap:18px;
 
 }
+
+/* CARD */
 
 .location-card-custom{
 
-width:34%;
+width:100%;
 
-padding:18px 10px;
+padding:24px 20px;
 
-border-radius:22px;
+border-radius:26px;
 
 }
 
+/* TEXT */
+
 .location-title{
 
-font-size:18px;
+font-size:24px;
 
 }
 
 .location-arabic{
 
-font-size:16px;
+font-size:18px;
 
-line-height:1.8;
+line-height:1.9;
 
 }
 
 .location-indo{
 
-font-size:8px;
+font-size:10px;
 
 }
 
+/* MAP */
+
 .location-map-custom{
 
-width:66%;
-
-border-radius:22px;
+width:100%;
 
 aspect-ratio:1/1;
+
+border-radius:26px;
 
 }
 
