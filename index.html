@@ -386,10 +386,15 @@ box-shadow:0 10px 30px rgba(0,0,0,.05);
 
 /* INTRO */
 
+/* INTRO */
+
 .intro-click{
 
 text-align:center;
+
 cursor:pointer;
+
+margin-bottom:18px;
 
 }
 
@@ -397,18 +402,23 @@ cursor:pointer;
 
 font-family:'Great Vibes',cursive;
 
-font-size:56px;
+font-size:48px;
+
+line-height:1.1;
 
 color:#3d3338;
 
-margin-bottom:10px;
+margin-bottom:6px;
 
 }
 
 .intro-hint{
 
-font-size:12px;
-color:#8f7d87;
+font-size:11px;
+
+color:#9b8d7d;
+
+letter-spacing:.5px;
 
 }
 
@@ -420,7 +430,12 @@ overflow:hidden;
 
 opacity:0;
 
-transition:max-height 1s ease, opacity .5s ease;
+transition:
+max-height 1s ease,
+opacity .6s ease,
+transform .6s ease;
+
+transform:translateY(-10px);
 
 }
 
@@ -430,17 +445,49 @@ max-height:900px;
 
 opacity:1;
 
-margin-top:24px;
+transform:translateY(0);
+
+margin-top:18px;
 
 }
 
 .intro-text{
 
-font-size:18px;
+text-align:center;
+
+}
+
+.intro-text .arabic{
+
+font-size:22px;
 
 line-height:2;
 
-text-align:center;
+color:#3f3438;
+
+margin-bottom:18px;
+
+}
+
+.intro-text .translate-small{
+
+font-size:13px;
+
+line-height:2.1;
+
+color:#7f6e76;
+
+max-width:95%;
+
+margin:auto;
+
+}
+
+.intro-card{
+
+padding:28px 22px !important;
+
+border-radius:26px !important;
 
 }
 
@@ -558,69 +605,375 @@ font-size:17px;
 line-height:1.8;
 
 }
+.event-text .translate-small{
 
-/* LOCATION */
+margin-top:8px;
 
-.location-card{
+font-family:'Montserrat',sans-serif;
+
+font-size:9px;
+
+font-weight:400;
+
+letter-spacing:.5px;
+
+line-height:1.7;
+
+color:#a89686;
+
+opacity:.9;
+
+}
+
+.event-text .arabic{
+
+font-size:18px;
+
+line-height:2;
+
+color:#3f3438;
+
+}
+
+/* ===== FINAL LOCATION ===== */
+
+.location-layout{
+
+display:flex;
+
+align-items:stretch;
+
+gap:18px;
+
+margin-top:24px;
+
+}
+
+/* CARD */
+
+.location-card-custom{
+
+width:32%;
 
 background:white;
 
 padding:24px 18px;
 
-border-radius:24px;
+border-radius:28px;
 
-box-shadow:0 10px 30px rgba(0,0,0,.05);
+box-shadow:0 10px 24px rgba(0,0,0,.04);
 
 text-align:center;
 
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
 }
 
-.location-map{
+.location-icon{
 
-margin-top:18px;
+font-size:34px;
+
+margin-bottom:14px;
+
+}
+
+.location-title{
+
+font-size:28px;
+
+line-height:1.4;
+
+color:#c9a96b;
+
+margin-bottom:12px;
+
+}
+
+.location-line{
+
+width:60px;
+
+height:1px;
+
+background:#e3cf9f;
+
+margin:16px auto;
+
+}
+
+.location-arabic{
+
+font-size:22px;
+
+line-height:2;
+
+color:#3f3438;
+
+margin-bottom:12px;
+
+}
+
+.location-indo{
+
+font-size:10px;
+
+line-height:1.8;
+
+letter-spacing:.3px;
+
+color:#9d8a77;
+
+}
+
+/* MAP */
+
+.location-map-custom{
+
+width:68%;
+
+aspect-ratio:1/1;
 
 overflow:hidden;
 
-border-radius:20px;
+border-radius:28px;
 
-height:260px;
+box-shadow:0 10px 24px rgba(0,0,0,.04);
+
+background:white;
 
 }
 
-.location-map iframe{
+.location-map-custom iframe{
 
 width:100%;
+
 height:100%;
+
 border:none;
+
+display:block;
 
 }
 
-/* SECRET */
+/* MOBILE */
+
+@media(max-width:768px){
+
+.location-layout{
+
+display:flex;
+
+flex-direction:row;
+
+gap:12px;
+
+align-items:stretch;
+
+}
+
+.location-card-custom{
+
+width:34%;
+
+padding:18px 10px;
+
+border-radius:22px;
+
+}
+
+.location-title{
+
+font-size:18px;
+
+}
+
+.location-arabic{
+
+font-size:16px;
+
+line-height:1.8;
+
+}
+
+.location-indo{
+
+font-size:8px;
+
+}
+
+.location-map-custom{
+
+width:66%;
+
+border-radius:22px;
+
+aspect-ratio:1/1;
+
+}
+
+}
+
+/* ===== SECRET ===== */
 
 .secret-grid{
 
 display:grid;
+
 grid-template-columns:1fr 1fr;
 
 gap:14px;
+
+margin-top:28px;
 
 }
 
 .secret-btn{
 
-padding:20px 10px;
-
 border:none;
-
-border-radius:18px;
 
 background:white;
 
-font-size:18px;
+padding:22px 10px;
+
+border-radius:22px;
+
+box-shadow:0 10px 24px rgba(0,0,0,.04);
 
 font-family:'Amiri',serif;
 
-box-shadow:0 10px 20px rgba(0,0,0,.04);
+font-size:22px;
+
+color:#3f3438;
+
+cursor:pointer;
+
+transition:.3s ease;
+
+}
+
+.secret-btn:hover{
+
+transform:translateY(-4px);
+
+background:#fffaf3;
+
+}
+
+/* ===== POPUP ===== */
+
+.popup-overlay{
+
+position:fixed;
+
+inset:0;
+
+background:rgba(0,0,0,.45);
+
+display:none;
+
+align-items:center;
+
+justify-content:center;
+
+padding:20px;
+
+z-index:9999;
+
+backdrop-filter:blur(4px);
+
+}
+
+.popup-card{
+
+width:100%;
+
+max-width:320px;
+
+background:#4a3d4b;
+
+padding:28px 22px;
+
+border-radius:28px;
+
+text-align:center;
+
+animation:popupShow .35s ease;
+
+}
+
+.popup-card .arabic{
+
+font-size:24px;
+
+line-height:2;
+
+color:#fff0d0;
+
+margin-bottom:12px;
+
+}
+
+.popup-card .translate-small{
+
+font-size:12px;
+
+line-height:1.8;
+
+color:#d9c7a8;
+
+}
+
+@keyframes popupShow{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px) scale(.95);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0) scale(1);
+
+}
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.secret-btn{
+
+font-size:18px;
+
+padding:18px 8px;
+
+border-radius:18px;
+
+}
+
+.popup-card{
+
+max-width:280px;
+
+padding:24px 18px;
+
+}
+
+.popup-card .arabic{
+
+font-size:20px;
+
+}
 
 }
 
@@ -666,6 +1019,94 @@ background:linear-gradient(145deg,#ecd6a5,#c7a062);
 
 }
 
+/* ===== MUSIC BUTTON ===== */
+
+.music-btn{
+
+position:fixed;
+
+right:18px;
+
+bottom:20px;
+
+width:68px;
+
+height:68px;
+
+border:none;
+
+border-radius:50%;
+
+background:linear-gradient(145deg,#ecd6a5,#c9a96b);
+
+box-shadow:0 10px 24px rgba(0,0,0,.15);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+z-index:999;
+
+cursor:pointer;
+
+overflow:hidden;
+
+}
+
+/* DISC */
+
+.music-disc{
+
+font-size:24px;
+
+position:absolute;
+
+
+}
+
+/* ROTATE */
+
+.music-btn.playing .music-disc{
+
+animation:spin 5s linear infinite;
+
+}
+
+/* ACTIVE */
+
+.music-btn.playing .equalizer{
+
+opacity:1;
+
+}
+
+/* GLOW */
+
+.music-btn.playing{
+
+box-shadow:
+0 0 0 6px rgba(201,169,107,.15),
+0 10px 24px rgba(0,0,0,.18);
+
+}
+
+/* ANIMATION */
+
+@keyframes spin{
+
+from{
+transform:rotate(0deg);
+}
+
+to{
+transform:rotate(360deg);
+}
+
+}
+
+
 /* FOOTER */
 
 .footer{
@@ -688,29 +1129,6 @@ color:#f6e5bc;
 
 }
 
-/* MUSIC */
-
-.music-btn{
-
-position:fixed;
-
-right:14px;
-bottom:14px;
-
-width:56px;
-height:56px;
-
-border:none;
-
-border-radius:999px;
-
-font-size:20px;
-
-background:linear-gradient(145deg,#ecd6a5,#c7a062);
-
-z-index:99;
-
-}
 
 /* POPUP */
 
@@ -753,6 +1171,34 @@ line-height:1.9;
 text-align:center;
 
 color:#fff0d0;
+
+}
+
+.popup-text{
+
+text-align:center;
+
+}
+
+.popup-text .arabic{
+
+font-size:22px;
+
+line-height:2;
+
+color:#fff0d0;
+
+margin-bottom:10px;
+
+}
+
+.popup-text .translate-small{
+
+font-size:12px;
+
+line-height:1.8;
+
+color:#d9c7a8;
 
 }
 
@@ -865,6 +1311,8 @@ Farihatul Fajriah & Rendy Tiratna
 <p class="hero-ayat arabic">
 وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا
 لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً
+<br>
+- Q.S Ar-Rum : 21 -
 </p>
 
 <a href="#intro" class="scroll-btn">↓</a>
@@ -902,8 +1350,16 @@ Klik untuk membuka kata pengantar
 <div class="card">
 
 <p class="intro-text arabic">
-بِكُلِّ مَحَبَّةٍ وَسُرُورٍ نَدْعُوكُمْ لِمُشَارَكَتِنَا
-فِي أَجْمَلِ لَحَظَاتِ عُمُرِنَا.
+بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ
+<br>
+<br>
+Dengan penuh rasa cinta dan kebahagiaan, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan kami yang penuh berkah, agar dapat bersama-sama menyaksikan momen indah yang dipersatukan Allah dengan kasih sayang dan rahmat-Nya.
+
+Kami sangat mengharapkan kehadiran serta doa restu dari Anda semua, agar hari bahagia kami dipenuhi keberkahan, kebahagiaan, dan keridhaan Allah SWT.
+
+Terima kasih atas kehadiran dan doa yang diberikan.
+<br>
+Wassalamu’alaikum Warahmatullahi Wabarakatuh
 </p>
 
 </div>
@@ -1005,7 +1461,11 @@ Klik untuk membuka kata pengantar
 <br>
 الساعة 09:00 صباحاً
 </p>
-
+<p class="translate-small">
+Sabtu, 06 Juni 2026
+<br>
+Pukul 09:00 WIB
+</p>
 </div>
 
 <div class="event-card">
@@ -1021,7 +1481,11 @@ Klik untuk membuka kata pengantar
 <br>
 الساعة 10:00 صباحاً
 </p>
-
+<p class="translate-small">
+Sabtu, 06 Juni 2026
+<br>
+Pukul 10:00 WIB
+</p>
 </div>
 
 </div>
@@ -1030,29 +1494,58 @@ Klik untuk membuka kata pengantar
 
 </section>
 
-<!-- LOCATION -->
+<!-- ===== LOKASI ===== -->
 
-<section class="section">
+<section class="section" id="location">
 
 <div class="container">
 
-<p class="section-label">LOKASI</p>
+<p class="section-label">
+LOKASI
+</p>
 
-<h2 class="section-title">
+<h2 class="section-title arabic">
 مكان الزفاف
 </h2>
 
-<div class="location-card">
+<div class="location-layout">
 
-<p class="event-text arabic">
+<!-- INFO -->
+
+<div class="location-card-custom">
+
+<div class="location-icon">
+📍
+</div>
+
+<h3 class="location-title arabic">
+في منزل العروس
+</h3>
+
+<div class="location-line"></div>
+
+<p class="location-arabic arabic">
 معهد الكلياني الإسلامي
 <br>
 سيتامان بادارينتشانغ
 </p>
 
-<div class="location-map">
+<p class="location-indo">
+Pon-Pes Koleang (Al Kuliyani)
+<br>
+Citaman - Padarincang
+</p>
 
-<iframe src="https://maps.google.com/maps?q=padarincang&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+</div>
+
+<!-- MAP -->
+
+<div class="location-map-custom">
+
+<iframe
+src="https://maps.google.com/maps?q=padarincang&t=&z=13&ie=UTF8&iwloc=&output=embed"
+loading="lazy">
+</iframe>
 
 </div>
 
@@ -1062,24 +1555,51 @@ Klik untuk membuka kata pengantar
 
 </section>
 
-<!-- SECRET -->
+<!-- ===== SECRET MESSAGE ===== -->
 
 <section class="section">
 
 <div class="container">
 
-<p class="section-label">PESAN</p>
+<p class="section-label">
+PESAN
+</p>
 
-<h2 class="section-title">
+<h2 class="section-title arabic">
 رسائل خاصة
 </h2>
 
 <div class="secret-grid">
 
-<button class="secret-btn" onclick="openPopup(1)">رسالة ١</button>
-<button class="secret-btn" onclick="openPopup(2)">رسالة ٢</button>
-<button class="secret-btn" onclick="openPopup(3)">رسالة ٣</button>
-<button class="secret-btn" onclick="openPopup(4)">رسالة ٤</button>
+<button class="secret-btn" onclick="openPopup(1)">
+رسالة ١
+</button>
+
+<button class="secret-btn" onclick="openPopup(2)">
+رسالة ٢
+</button>
+
+<button class="secret-btn" onclick="openPopup(3)">
+رسالة ٣
+</button>
+
+<button class="secret-btn" onclick="openPopup(4)">
+رسالة ٤
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- POPUP -->
+
+<div id="popup" class="popup-overlay">
+
+<div class="popup-card">
+
+<div id="popupText"></div>
 
 </div>
 
@@ -1133,10 +1653,28 @@ Kirim Konfirmasi
 
 </footer>
 
-<button class="music-btn" onclick="toggleMusic()">♫</button>
+<<button class="music-btn" id="musicBtn" onclick="toggleMusic()">
+
+<div class="music-disc">
+🎵
+</div>
+
+<div class="equalizer">
+
+<span></span>
+<span></span>
+<span></span>
+
+</div>
+
+</button>
 
 <audio id="music" loop>
-<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_8b3c1e4fd3.mp3?filename=arabic-background-music-110507.mp3">
+
+<source
+src="./assets/music/wedding nasheed.mp3"
+type="audio/mp3">
+
 </audio>
 
 <div id="popup" class="popup">
@@ -1151,7 +1689,27 @@ Kirim Konfirmasi
 
 <script>
 
-const music=document.getElementById('music');
+const music = document.getElementById('music');
+
+const musicBtn = document.getElementById('musicBtn');
+
+function toggleMusic(){
+
+if(music.paused){
+
+music.play();
+
+musicBtn.classList.add('playing');
+
+}else{
+
+music.pause();
+
+musicBtn.classList.remove('playing');
+
+}
+
+}
 
 function openInvitation(){
 
@@ -1167,16 +1725,6 @@ music.play().catch(()=>{});
 
 }
 
-function toggleMusic(){
-
-if(music.paused){
-music.play();
-}else{
-music.pause();
-}
-
-}
-
 function toggleIntro(){
 
 const content=document.getElementById('introContent');
@@ -1187,13 +1735,65 @@ content.classList.toggle('show');
 
 const messages={
 
-1:'أسعد الله أيامكم كما أسعدتم حضورنا 🤍',
+1:`
+<div class="popup-text">
 
-2:'شكرًا لحضوركم ودعواتكم الجميلة ✨',
+<p class="arabic">
+أسعد الله أيامكم كما أسعدتم حضورنا 🤍
+</p>
 
-3:'نسأل الله أن يجمعنا دائمًا بالمحبة والخير 🌙',
+<p class="translate-small">
+Semoga Allah membahagiakan hari-hari Anda
+sebagaimana Anda telah membahagiakan hari kami.
+</p>
 
-4:'وجودكم يزيد فرحتنا نورًا وجمالًا 💍'
+</div>
+`,
+
+2:`
+<div class="popup-text">
+
+<p class="arabic">
+شكرًا لحضوركم ودعواتكم الجميلة ✨
+</p>
+
+<p class="translate-small">
+Terima kasih atas kehadiran
+dan doa-doa indah Anda.
+</p>
+
+</div>
+`,
+
+3:`
+<div class="popup-text">
+
+<p class="arabic">
+نسأل الله أن يجمعنا دائمًا بالمحبة والخير 🌙
+</p>
+
+<p class="translate-small">
+Semoga Allah selalu mempertemukan kita
+dalam cinta dan kebaikan.
+</p>
+
+</div>
+`,
+
+4:`
+<div class="popup-text">
+
+<p class="arabic">
+وجودكم يزيد فرحتنا نورًا وجمالًا 💍
+</p>
+
+<p class="translate-small">
+Kehadiran Anda menambah
+cahaya dan keindahan kebahagiaan kami.
+</p>
+
+</div>
+`
 
 };
 
@@ -1201,7 +1801,7 @@ function openPopup(id){
 
 document.getElementById('popup').style.display='flex';
 
-document.getElementById('popupText').innerText=messages[id];
+document.getElementById('popupText').innerHTML=messages[id];
 
 }
 
