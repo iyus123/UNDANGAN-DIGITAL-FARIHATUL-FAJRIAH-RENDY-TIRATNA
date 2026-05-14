@@ -9,17 +9,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-
 :root{
-
 --bg:#141916;
 --bg2:#1f2622;
---gold:#e0c78f;
---gold-soft:#b89963;
---dark:#f8f2e9;
+--gold:#f2dab2; /* Warna emas diperterang agar lebih terbaca */
+--gold-soft:#d6bc8d;
+--dark:#f8f2e9; /* Teks utama menggunakan warna terang */
 --soft:#c8b69d;
---card:rgba(255,255,255,.05);
-
+--card:rgba(255,255,255,.08); /* Sedikit lebih tebal untuk kontras */
 }
 
 *{
@@ -32,15 +29,8 @@ html{
 scroll-behavior:smooth;
 }
 
-<div class="floating floating1">🤍</div>
-<div class="floating floating2">✨</div>
-<div class="floating floating3">🌙</div>
-<div class="floating floating4">💍</div>
-
 body{
-
 font-family:'Montserrat',sans-serif;
-
 background:
 linear-gradient(
 180deg,
@@ -48,13 +38,9 @@ linear-gradient(
 #1b211d 40%,
 #141916 100%
 );
-
 color:var(--dark);
-
 overflow-x:hidden;
-
 position:relative;
-
 }
 
 img{
@@ -67,186 +53,75 @@ font-family:'Amiri',serif;
 }
 
 /* ===== ARABESQUE OVERLAY ===== */
-
 body::before{
-
 content:'';
-
 position:fixed;
-
 inset:0;
-
 background:url('https://www.transparenttextures.com/patterns/arabesque.png');
-
 opacity:.045;
-
 pointer-events:none;
-
 z-index:0;
-
 }
 
 /* ===== FLOATING ICON ===== */
-
 .floating{
-
 position:fixed;
-
 font-size:20px;
-
 pointer-events:none;
-
 opacity:.35;
-
 z-index:1;
-
 animation:floatMove 10s infinite ease-in-out;
-
 }
-
-.floating1{
-
-top:20%;
-
-left:8%;
-
-animation-delay:0s;
-
-}
-
-.floating2{
-
-top:40%;
-
-right:10%;
-
-animation-delay:2s;
-
-}
-
-.floating3{
-
-bottom:20%;
-
-left:15%;
-
-animation-delay:4s;
-
-}
-
-.floating4{
-
-bottom:30%;
-
-right:12%;
-
-animation-delay:6s;
-
-}
+.floating1{top:20%;left:8%;animation-delay:0s;}
+.floating2{top:40%;right:10%;animation-delay:2s;}
+.floating3{bottom:20%;left:15%;animation-delay:4s;}
+.floating4{bottom:30%;right:12%;animation-delay:6s;}
 
 @keyframes floatMove{
-
-0%{
-
-transform:translateY(0px);
-
+0%{transform:translateY(0px);}
+50%{transform:translateY(-18px);}
+100%{transform:translateY(0px);}
 }
 
-50%{
-
-transform:translateY(-18px);
-
-}
-
-100%{
-
-transform:translateY(0px);
-
-}
-
-}
-
-/* ===== SCROLL ANIMATION ===== */
-
+/* ===== PERBAIKAN SWAP/SCROLL ANIMATION ===== */
 .reveal{
-
 opacity:0;
-
-transform:translateY(40px);
-
-transition:
-opacity 1s ease,
-transform 1s ease;
-
+transform:translateY(50px) scale(0.95); /* Menambah efek scale agar lebih halus */
+transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Kurva transisi lebih premium */
 }
-
 .reveal.active{
-
 opacity:1;
-
-transform:translateY(0);
-
+transform:translateY(0) scale(1);
 }
+
 .scroll-btn{
-
 animation:bounceGlow 2s infinite;
-
 }
 
 @keyframes bounceGlow{
-
-0%{
-
-transform:translateY(0);
-
-box-shadow:0 0 0 rgba(201,169,107,.4);
-
+0%{transform:translateY(0);box-shadow:0 0 0 rgba(201,169,107,.4);}
+50%{transform:translateY(10px);box-shadow:0 0 25px rgba(201,169,107,.5);}
+100%{transform:translateY(0);box-shadow:0 0 0 rgba(201,169,107,.2);}
 }
 
-50%{
-
-transform:translateY(10px);
-
-box-shadow:0 0 25px rgba(201,169,107,.5);
-
-}
-
-100%{
-
-transform:translateY(0);
-
-box-shadow:0 0 0 rgba(201,169,107,.2);
-
-}
-
-}
 .section{
-
 position:relative;
-
 z-index:2;
-
 padding:70px 18px;
 }
 
-
 /* MOBILE FIRST */
-
 .cover{
 position:fixed;
 inset:0;
 z-index:9999;
-
 display:flex;
 align-items:center;
 justify-content:center;
-
 padding:20px;
-
 background:
 linear-gradient(rgba(18,28,24,.86),rgba(18,28,24,.86)),
 url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200');
-
 background-size:cover;
 background-position:center;
 }
@@ -255,268 +130,187 @@ background-position:center;
 content:'';
 position:absolute;
 inset:0;
-
 background:url('https://www.transparenttextures.com/patterns/arabesque.png');
 opacity:.05;
 }
 
 .cover-card{
-
 position:relative;
 z-index:2;
-
 width:100%;
 max-width:360px;
-
 padding:28px 22px;
-
 border-radius:28px;
-
 background:rgba(255,255,255,.06);
-
 backdrop-filter:blur(14px);
-
-border:1px solid rgba(222,197,141,.14);
-
+border:1px solid rgba(222,197,141,.25); /* Garis diperjelas */
 text-align:center;
-
 }
 
 .cover-bismillah{
-
 font-size:15px;
 line-height:1.8;
-
 color:var(--gold);
-
 margin-bottom:14px;
-
 }
 
 .cover-title{
-
 font-family:'Cinzel',serif;
-
 font-size:12px;
-
 letter-spacing:4px;
-
 color:var(--gold);
-
 margin-bottom:16px;
-
 }
 
-/* ===== COVER COUPLE ===== */
-
-.cover-couple{
-
-display:flex;
-
-flex-direction:column;
-
-align-items:center;
-
-justify-content:center;
-
-gap:2px;
-
-margin-bottom:18px;
-
+/* ===== RESPONSIVE FIX ===== */
+html,body{
+margin:0;
+padding:0;
+overflow-x:hidden;
+width:100%;
 }
 
-/* NAME */
-
-.couple-line{
-
-font-family:'Great Vibes',cursive;
-
-font-size:62px;
-
-line-height:1.05;
-
-white-space:nowrap;
-
-color:#fff5dc;
-
-text-align:center;
-
-text-shadow:
-0 0 18px rgba(224,199,143,.18);
-
+/* CONTAINER */
+.container{
+width:100%;
+max-width:1200px;
+margin:auto;
+padding:0 18px;
+box-sizing:border-box;
 }
 
-/* & */
+/* SECTION */
+.section{width:100%;}
 
-.couple-separator{
+/* GRID FIX */
+.couple-grid, .event-grid, .invite-grid, .chat-wrap{
+display:grid;
+gap:18px;
+}
 
-font-family:'Great Vibes',cursive;
-
-font-size:54px;
-
-line-height:1;
-
-margin:2px 0;
-
-color:#fff5dc;
-
-text-shadow:
-0 0 18px rgba(224,199,143,.18);
-
+/* DESKTOP */
+@media(min-width:769px){
+.couple-grid{grid-template-columns:repeat(2,1fr);}
+.event-grid{grid-template-columns:repeat(2,1fr);}
+.invite-grid{grid-template-columns:repeat(2,1fr);}
+.chat-wrap{grid-template-columns:repeat(2,1fr);}
 }
 
 /* MOBILE */
+@media(max-width:768px){
+.couple-grid, .event-grid, .invite-grid{grid-template-columns:1fr;}
+.chat-wrap{grid-template-columns:1fr 1fr; gap:12px;}
+}
+
+/* ===== COVER COUPLE ===== */
+.cover-couple{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:2px;
+margin-bottom:18px;
+}
+
+.couple-line{
+font-family:'Great Vibes',cursive;
+font-size:62px;
+line-height:1.05;
+white-space:nowrap;
+color:#fff5dc;
+text-align:center;
+text-shadow:0 0 18px rgba(224,199,143,.18);
+}
+
+.couple-separator{
+font-family:'Great Vibes',cursive;
+font-size:54px;
+line-height:1;
+margin:2px 0;
+color:#fff5dc;
+text-shadow:0 0 18px rgba(224,199,143,.18);
+}
 
 @media(max-width:768px){
-
-.couple-line{
-
-font-size:50px;
-
+.couple-line{font-size:50px;}
+.couple-separator{font-size:42px;}
 }
-
-.couple-separator{
-
-font-size:42px;
-
-}
-
-}
-
-/* SMALL MOBILE */
 
 @media(max-width:430px){
-
-.couple-line{
-
-font-size:44px;
-
-}
-
-.couple-separator{
-
-font-size:38px;
-
-}
-
+.couple-line{font-size:44px;}
+.couple-separator{font-size:38px;}
 }
 
 .cover-quote{
-
 font-size:12px;
-
 line-height:1.9;
-
 color:#f4e8d5;
-
 margin-bottom:20px;
-
 }
 
 .cover-target{
-
 padding:14px;
-
 border-radius:18px;
-
 background:rgba(255,255,255,.04);
-
 margin-bottom:22px;
-
 }
 
 .cover-target small{
-
 display:block;
-
 font-size:10px;
-
 letter-spacing:2px;
-
 color:var(--gold);
-
 margin-bottom:6px;
-
 }
 
 .cover-target h3{
-
 font-size:17px;
-
 line-height:1.4;
-
 color:white;
-
 margin-bottom:4px;
-
 }
 
 .cover-target span{
-
 font-size:10px;
-
 letter-spacing:1px;
-
 color:#e5d2a8;
-
 }
 
 .open-btn{
-
 width:100%;
-
 padding:15px;
-
 border:none;
-
 border-radius:999px;
-
 font-size:13px;
-
 font-weight:700;
-
 background:linear-gradient(145deg,#f0deb5,#c9a96b);
-
 color:#2b2418;
-
+cursor:pointer;
 }
 
 /* HERO */
-
 .hero{
-
 position:relative;
-
 min-height:100svh;
-
 display:flex;
 align-items:center;
 justify-content:center;
-
 padding:90px 18px;
-
 text-align:center;
-
 background:
 linear-gradient(rgba(18,28,24,.84),rgba(18,28,24,.84)),
 url('./assets/images/prewed.jpg');
-
 background-size:cover;
 background-position:center;
-
 color:white;
-
 }
 
 .hero::before{
-
 content:'';
 position:absolute;
 inset:0;
-
 background:url('https://www.transparenttextures.com/patterns/arabesque.png');
 opacity:.05;
-
 }
 
 .hero-content{
@@ -526,1658 +320,608 @@ max-width:380px;
 }
 
 .hero-bismillah{
-
 font-size:32px;
 line-height:3.0;
-
 color:var(--gold);
-
 margin-bottom:18px;
-
 }
 
 .hero-name{
-
 font-family:'Great Vibes',cursive;
-
 font-size:40px;
-
 line-height:1.15;
-
 color:#fff5d6;
-
 margin-bottom:16px;
-
-text-shadow:
-0 0 18px rgba(224,199,143,.25);
-
+text-shadow:0 0 18px rgba(224,199,143,.25);
 }
-
-/* MOBILE */
 
 @media(max-width:480px){
-
-.hero-name{
-
-font-size:40px;
-
-}
-
-.hero-bismillah{
-
-font-size:18px;
-}
-
-.hero-sub{
-
-font-size:10px;
-
-letter-spacing:2px;
-
-margin-bottom:20px;
-
-}
-
-.hero-ayat{
-
-font-size:18px;
-
-line-height:1.9;
-
-color:#f3ead8;
-
-margin-bottom:28px;
-
+.hero-name{font-size:40px;}
+.hero-bismillah{font-size:18px;}
+.hero-sub{font-size:10px;letter-spacing:2px;margin-bottom:20px;}
+.hero-ayat{font-size:18px;line-height:1.9;color:#f3ead8;margin-bottom:28px;}
 }
 
 .scroll-btn{
-
 width:52px;
 height:52px;
-
 margin:auto;
-
 display:flex;
 align-items:center;
 justify-content:center;
-
 border-radius:999px;
-
 text-decoration:none;
-
 font-size:24px;
-
 background:linear-gradient(145deg,#ecd6a5,#c7a062);
-
 color:#2b2418;
-
 }
 
-/* GLOBAL */
-
-.section{
-padding:70px 18px;
-}
-
-.container{
-max-width:420px;
-margin:auto;
-}
+/* GLOBAL SECTIONS */
+.section{padding:70px 18px;}
+.container{max-width:420px;margin:auto;}
 
 .section-label{
-
 font-size:10px;
-
 letter-spacing:3px;
-
 text-transform:uppercase;
-
 color:#c9a96b;
-
 text-align:center;
-
 margin-bottom:10px;
-
 }
 
+/* PERBAIKAN WARNA JUDUL AGAR TIDAK NABRAK */
 .section-title{
-
 font-size:34px;
-
 line-height:1.2;
-
 text-align:center;
-
 margin-bottom:30px;
-
 font-family:'Cinzel',serif;
-
-color:#3d3338;
-
+color:var(--gold); /* Berubah ke emas agar terlihat di bg gelap */
 }
 
 .card{
-
 background:rgba(255,255,255,.05);
-
 backdrop-filter:blur(12px);
-
-border:1px solid rgba(255,255,255,.06);
-
+border:1px solid rgba(255,255,255,.08);
 padding:24px 18px;
-
 border-radius:24px;
-
-box-shadow:0 10px 30px rgba(0,0,0,.05);
-
+box-shadow:0 10px 30px rgba(0,0,0,.1);
 }
 
 /* INTRO */
-
-
 .intro-click{
-
 text-align:center;
-
 cursor:pointer;
-
 margin-bottom:18px;
-
 }
 
 .intro-text-main{
-
 font-size:11px;
-
 line-height:2.05;
-
-}
-
 letter-spacing:.3px;
-
 color:#f5ede0;
-
 max-width:92%;
-
 margin:auto;
-
 }
 
 .intro-hint{
-
 font-size:11px;
-
 color:#9b8d7d;
-
 letter-spacing:.5px;
-
 }
 
+/* ===== INTRO CONTENT ===== */
 .intro-content{
-
-max-height:0;
-
-overflow:hidden;
-
-opacity:0;
-
-transition:
-max-height 1s ease,
-opacity .6s ease,
-transform .6s ease;
-
-transform:translateY(-10px);
-
+display:none;
+margin-top:24px;
 }
 
 .intro-content.show{
-
-max-height:900px;
-
-opacity:1;
-
-transform:translateY(0);
-
-margin-top:18px;
-
+display:block;
+animation:fadeIntro .7s ease;
 }
 
-.intro-text{
-
-text-align:center;
-
+@keyframes fadeIntro{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
 }
+
+.intro-text{text-align:center;}
 
 .intro-text .arabic{
-
 font-size:22px;
-
 line-height:2;
-
-color:#3f3438;
-
+color:var(--dark); /* Perbaikan kontras */
 margin-bottom:18px;
-
 }
 
 .intro-text .translate-small{
-
 font-size:13px;
-
 line-height:2.1;
-
-color:#7f6e76;
-
+color:var(--soft);
 max-width:95%;
-
 margin:auto;
-
 }
 
 .intro-card{
-
 padding:28px 22px !important;
-
 border-radius:26px !important;
+}
 
+/* ===== INTRO SECTION ===== */
+.intro-section{
+position:relative;
+padding:100px 18px;
+background:
+linear-gradient(rgba(8,10,12,.72), rgba(8,10,12,.72)),
+url('./assets/images/prewed.jpg');
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+}
+
+/* ===== IOS SAFARI FIX ===== */
+@supports (-webkit-touch-callout: none){
+.intro-section{
+background-attachment:scroll !important;
+min-height:auto !important;
+height:auto !important;
+overflow:visible !important;
+}
+.intro-content{position:relative; z-index:10;}
 }
 
 /* COUPLE */
-
-.couple-grid{
-
-display:grid;
-gap:18px;
-
-}
+.couple-grid{display:grid; gap:18px;}
 
 .couple-card{
-
 background:rgba(255,255,255,.05);
-
 backdrop-filter:blur(12px);
-
 border:1px solid rgba(255,255,255,.06);
-
 padding:24px 18px;
-
 border-radius:24px;
-
 text-align:center;
-
 box-shadow:0 10px 30px rgba(0,0,0,.05);
-
 }
 
 .couple-img{
-
 width:140px;
 height:140px;
-
 margin:0 auto 18px;
-
 border-radius:999px;
-
 object-fit:cover;
-
 border:4px solid #e8d2a2;
-
 }
 
-.couple-role{
-
-font-size:24px;
-
-color:#c9a96b;
-
-margin-bottom:8px;
-
-}
-
-.couple-name{
-
-font-size:26px;
-
-line-height:1.3;
-
-margin-bottom:8px;
-
-}
-
-.couple-desc{
-
-font-size:15px;
-
-line-height:1.9;
-
-}
+.couple-role{font-size:24px; color:#c9a96b; margin-bottom:8px;}
+.couple-name{font-size:26px; line-height:1.3; margin-bottom:8px; color:var(--dark);}
+.couple-desc{font-size:15px; line-height:1.9; color:var(--soft);}
 
 /* EVENT */
-
-.event-grid{
-
-display:grid;
-gap:18px;
-
-}
+.event-grid{display:grid; gap:18px;}
 
 .event-card{
-
 background:rgba(255,255,255,.05);
-
 backdrop-filter:blur(12px);
-
 border:1px solid rgba(255,255,255,.06);
-
 padding:24px 18px;
-
 border-radius:24px;
-
 text-align:center;
-
 box-shadow:0 10px 30px rgba(0,0,0,.05);
-
 }
 
-.event-icon{
+.event-icon{font-size:44px; margin-bottom:12px;}
+.event-title{font-size:24px; color:#c9a96b; margin-bottom:12px;}
+.event-text{font-size:17px; line-height:1.8; color:var(--dark);}
 
-font-size:44px;
-
-margin-bottom:12px;
-
-}
-
-.event-title{
-
-font-size:24px;
-
-color:#c9a96b;
-
-margin-bottom:12px;
-
-}
-
-.event-text{
-
-font-size:17px;
-
-line-height:1.8;
-
-}
 .event-text .translate-small{
-
 margin-top:8px;
-
 font-family:'Montserrat',sans-serif;
-
 font-size:9px;
-
 font-weight:400;
-
 letter-spacing:.5px;
-
 line-height:1.7;
-
 color:#a89686;
-
 opacity:.9;
-
 }
 
 .event-text .arabic{
-
 font-size:18px;
-
 line-height:2;
-
-color:#3f3438;
-
+color:var(--dark);
 }
 
 /* ===== LOCATION ===== */
-
 .location-layout{
-
 display:flex;
-
 gap:18px;
-
 align-items:stretch;
-
 margin-top:24px;
-
 }
-
-/* CARD */
 
 .location-card-custom{
-
 width:34%;
-
 background:rgba(255,255,255,.05);
-
 backdrop-filter:blur(12px);
-
 border:1px solid rgba(255,255,255,.06);
-
 padding:24px 18px;
-
 border-radius:28px;
-
 box-shadow:0 10px 24px rgba(0,0,0,.05);
-
 text-align:center;
-
 display:flex;
-
 flex-direction:column;   
-
 justify-content:center;
-
 }
 
-.location-icon{
-
-font-size:36px;
-
-margin-bottom:14px;
-
-}
-
-.location-title{
-
-font-size:28px;
-
-line-height:1.4;
-
-color:var(--gold);
-
-margin-bottom:12px;
-
-}
-
-.location-line{
-
-width:60px;
-
-height:1px;
-
-background:#e3cf9f;
-
-margin:16px auto;
-
-}
-
-.location-arabic{
-
-font-size:22px;
-
-line-height:1.9;
-
-margin-bottom:12px;
-
-}
-
-.location-indo{
-
-font-size:10px;
-
-line-height:1.8;
-
-letter-spacing:.4px;
-
-color:#9d8a77;
-
-}
-
-/* MAP */
+.location-icon{font-size:36px; margin-bottom:14px;}
+.location-title{font-size:28px; line-height:1.4; color:var(--gold); margin-bottom:12px;}
+.location-line{width:60px; height:1px; background:#e3cf9f; margin:16px auto;}
+.location-arabic{font-size:22px; line-height:1.9; margin-bottom:12px; color:var(--dark);}
+.location-indo{font-size:10px; line-height:1.8; letter-spacing:.4px; color:#9d8a77;}
 
 .location-map-custom{
-
 width:66%;
-
 overflow:hidden;
-
 border-radius:28px;
-
 box-shadow:0 10px 24px rgba(0,0,0,.05);
-
 background:rgba(255,255,255,.05);
-
 backdrop-filter:blur(12px);
-
 border:1px solid rgba(255,255,255,.06);
-
 }
 
 .location-map-custom iframe{
-
 width:100%;
-
 height:100%;
-
 min-height:100%;
-
 border:none;
-
 display:block;
-
 }
-
-/* ===== MOBILE ===== */
 
 @media(max-width:768px){
-
-.location-layout{
-
-flex-direction:column;
-
-gap:18px;
-
+.location-layout{flex-direction:column; gap:18px;}
+.location-card-custom{width:100%; padding:24px 20px; border-radius:26px;}
+.location-title{font-size:24px;}
+.location-arabic{font-size:18px; line-height:1.9;}
+.location-indo{font-size:10px;}
+.location-map-custom{width:100%; aspect-ratio:1/1; border-radius:26px;}
 }
 
-/* CARD */
-
-.location-card-custom{
-
-width:100%;
-
-padding:24px 20px;
-
-border-radius:26px;
-
-}
-
-/* TEXT */
-
-.location-title{
-
-font-size:24px;
-
-}
-
-.location-arabic{
-
-font-size:18px;
-
-line-height:1.9;
-
-}
-
-.location-indo{
-
-font-size:10px;
-
-}
-
-/* MAP */
-
-.location-map-custom{
-
-width:100%;
-
-aspect-ratio:1/1;
-
-border-radius:26px;
-
-}
-
-}
-
-/* ===== SECRET ===== */
-
+/* ===== SECRET BUTTONS ===== */
 .secret-grid{
-
 display:grid;
-
 grid-template-columns:1fr 1fr;
-
 gap:14px;
-
 margin-top:28px;
-
 }
 
 .secret-btn{
-
 border:none;
-
 background:rgba(255,255,255,.05);
-
 backdrop-filter:blur(12px);
-
 border:1px solid rgba(255,255,255,.06);
-
 padding:22px 10px;
-
 border-radius:22px;
-
 box-shadow:0 10px 24px rgba(0,0,0,.04);
-
 font-family:'Amiri',serif;
-
 font-size:22px;
-
-color:#3f3438;
-
+color:var(--gold); /* Perbaikan kontras */
 cursor:pointer;
-
-transition:.3s ease;
-
+transition: all .3s ease;
 }
 
 .secret-btn:hover{
-
-transform:translateY(-4px);
-
-background:#fffaf3;
-
+transform:translateY(-5px);
+background:rgba(255,255,255,.1);
+border-color:var(--gold);
 }
 
 /* ===== TURUT MENGUNDANG ===== */
-
 .invite-grid{
-
 display:grid;
-
 grid-template-columns:1fr 1fr;
-
 gap:18px;
-
 margin-top:24px;
-
 }
 
 .invite-card{
-
 background:rgba(255,255,255,.05);
-
 backdrop-filter:blur(12px);
-
 border:1px solid rgba(255,255,255,.06);
-
 padding:24px 18px;
-
 border-radius:26px;
-
 box-shadow:0 10px 30px rgba(0,0,0,.05);
-
 }
 
-.invite-title{
-
-font-size:26px;
-
-text-align:center;
-
-color:var(--gold);
-
-margin-bottom:6px;
-
-}
-
-.invite-subtitle{
-
-font-size:10px;
-
-letter-spacing:.5px;
-
-text-align:center;
-
-color:#9f8d84;
-
-margin-bottom:14px;
-
-}
-
-.invite-line{
-
-width:60px;
-
-height:1px;
-
-background:#e3cf9f;
-
-margin:14px auto 20px;
-
-}
-
-.invite-text{
-
-font-size:16px;
-
-line-height:2;
-
-text-align:center;
-
-color:#3f3438;
-
-}
-
-/* MOBILE */
+.invite-title{font-size:26px; text-align:center; color:var(--gold); margin-bottom:6px;}
+.invite-subtitle{font-size:10px; letter-spacing:.5px; text-align:center; color:#9f8d84; margin-bottom:14px;}
+.invite-line{width:60px; height:1px; background:#e3cf9f; margin:14px auto 20px;}
+.invite-text{font-size:16px; line-height:2; text-align:center; color:var(--dark);}
 
 @media(max-width:768px){
-
-.invite-grid{
-
-grid-template-columns:1fr;
-
-gap:16px;
-
+.invite-grid{grid-template-columns:1fr; gap:16px;}
+.invite-title{font-size:22px;}
+.invite-text{font-size:15px; line-height:1.9;}
 }
 
-.invite-title{
-
-font-size:22px;
-
-}
-
-.invite-text{
-
-font-size:15px;
-
-line-height:1.9;
-
-}
-
-}
-
-/* ===== POPUP ===== */
-
+/* ===== PERBAIKAN POPUP (HALUS) ===== */
 .popup-overlay{
-
 position:fixed;
-
 inset:0;
-
-background:rgba(0,0,0,.45);
-
+background:rgba(0,0,0,.7); /* Lebih gelap */
 display:none;
-
 align-items:center;
-
 justify-content:center;
-
 padding:20px;
-
 z-index:9999;
+backdrop-filter:blur(8px); /* Lebih blur */
+opacity: 0;
+transition: opacity 0.4s ease;
+}
 
-backdrop-filter:blur(4px);
-
+.popup-overlay.show{
+display:flex;
+opacity: 1;
 }
 
 .popup-card{
-
 width:100%;
-
 max-width:320px;
-
-background:#4a3d4b;
-
+background:#22352d; /* Warna disesuaikan dengan tema */
 padding:28px 22px;
-
+border: 1px solid var(--gold-soft);
 border-radius:28px;
-
 text-align:center;
-
-animation:popupShow .35s ease;
-
+transform: scale(0.8);
+transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.popup-card .arabic{
-
-font-size:24px;
-
-line-height:2;
-
-color:#fff0d0;
-
-margin-bottom:12px;
-
+.popup-overlay.show .popup-card{
+transform: scale(1);
 }
 
-.popup-card .translate-small{
-
-font-size:12px;
-
-line-height:1.8;
-
-color:#d9c7a8;
-
-}
-
-@keyframes popupShow{
-
-from{
-
-opacity:0;
-
-transform:translateY(20px) scale(.95);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0) scale(1);
-
-}
-
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-.secret-btn{
-
-font-size:18px;
-
-padding:18px 8px;
-
-border-radius:18px;
-
-}
-
-.popup-card{
-
-max-width:280px;
-
-padding:24px 18px;
-
-}
-
-.popup-card .arabic{
-
-font-size:20px;
-
-}
-
-}
+.popup-card .arabic{font-size:24px; line-height:2; color:#fff0d0; margin-bottom:12px;}
+.popup-card .translate-small{font-size:12px; line-height:1.8; color:#d9c7a8;}
 
 /* ===== CHAT GRID ===== */
-
 .chat-wrap{
-
 display:grid;
-
 grid-template-columns:1fr 1fr;
-
 gap:16px;
-
 margin-top:24px;
-
 }
 
 .chat-card{
-
 background:rgba(255,255,255,.05);
-
 backdrop-filter:blur(12px);
-
 border:1px solid rgba(255,255,255,.06);
-
 padding:18px;
-
 border-radius:18px;
-
 box-shadow:0 10px 30px rgba(0,0,0,.05);
-
 transition:.4s ease;
-
 min-height:180px;
-
 display:flex;
-
 flex-direction:column;
-
 justify-content:flex-start;
-
 }
 
-.chat-card:hover{
+.chat-card:hover{transform:translateY(-4px);}
 
-transform:translateY(-4px);
-
-}
-
-/* HEADER */
-
-.chat-header{
-
-display:flex;
-
-align-items:center;
-
-gap:12px;
-
-margin-bottom:14px;
-
-}
+.chat-header{display:flex; align-items:center; gap:12px; margin-bottom:14px;}
 
 .chat-avatar{
-
-width:42px;
-height:42px;
-
+width:42px; height:42px;
 border-radius:14px;
-
 background:linear-gradient(145deg,#ecd6a5,#c9a96b);
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-font-weight:700;
-
-font-size:15px;
-
-color:#2b2418;
-
-flex-shrink:0;
-
+display:flex; align-items:center; justify-content:center;
+font-weight:700; font-size:15px; color:#2b2418; flex-shrink:0;
 }
 
-.chat-username{
-
-font-size:13px;
-
-color:#3f3438;
-
-margin-bottom:2px;
-
-}
-
-.chat-time{
-
-font-size:10px;
-
-color:#a08f7d;
-
-}
-
-/* MESSAGE */
-
-.chat-message{
-
-font-size:13px;
-
-line-height:1.9;
-
-color:#5c4f56;
-
-}
-
-/* MOBILE */
+.chat-username{font-size:13px; color:var(--gold); margin-bottom:2px;}
+.chat-time{font-size:10px; color:#a08f7d;}
+.chat-message{font-size:13px; line-height:1.9; color:var(--dark);}
 
 @media(max-width:768px){
-
-.chat-wrap{
-
-grid-template-columns:1fr 1fr;
-
-gap:12px;
-
-}
-
-.chat-card{
-
-padding:16px;
-
-border-radius:16px;
-
-min-height:165px;
-
-}
-
-.chat-message{
-
-font-size:12px;
-
-line-height:1.8;
-
-}
-
-.chat-avatar{
-
-width:38px;
-height:38px;
-
-border-radius:12px;
-
-font-size:13px;
-
-}
-
+.chat-wrap{grid-template-columns:1fr 1fr; gap:12px;}
+.chat-card{padding:16px; border-radius:16px; min-height:165px;}
+.chat-message{font-size:12px; line-height:1.8;}
+.chat-avatar{width:38px; height:38px; border-radius:12px; font-size:13px;}
 }
 
 /* RSVP */
+.rsvp-form{display:flex; flex-direction:column; gap:14px;}
 
-.rsvp-form{
-
-display:flex;
-flex-direction:column;
-gap:14px;
-
-}
-
-.rsvp-form input,
-.rsvp-form select,
-.rsvp-form textarea{
-
-padding:16px;
-
-border:none;
-
-border-radius:16px;
-
-background:#faf7f4;
-
-font-size:13px;
-
-font-family:'Montserrat',sans-serif;
-
+.rsvp-form input, .rsvp-form select, .rsvp-form textarea{
+padding:16px; border:none; border-radius:16px;
+background:#faf7f4; font-size:13px; font-family:'Montserrat',sans-serif;
 }
 
 .rsvp-form button{
-
-padding:16px;
-
-border:none;
-
-border-radius:16px;
-
-font-weight:700;
-
+padding:16px; border:none; border-radius:16px; font-weight:700;
 background:linear-gradient(145deg,#ecd6a5,#c7a062);
-
+cursor:pointer;
 }
 
 /* ===== MUSIC BUTTON ===== */
-
 .music-btn{
-
 position:fixed;
-
 right:18px;
-
 bottom:20px;
-
 width:68px;
-
 height:68px;
-
 border:none;
-
 border-radius:50%;
-
 background:linear-gradient(145deg,#ecd6a5,#c9a96b);
-
 box-shadow:0 10px 24px rgba(0,0,0,.15);
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-z-index:999;
-
-cursor:pointer;
-
-overflow:hidden;
-
+display:flex; align-items:center; justify-content:center;
+z-index:999; cursor:pointer; overflow:hidden;
 }
 
-/* DISC */
-
-.music-disc{
-
-font-size:24px;
-
-position:absolute;
-
-
-}
-
-/* ROTATE */
-
-.music-btn.playing .music-disc{
-
-animation:spin 5s linear infinite;
-
-}
-
-/* ACTIVE */
-
-.music-btn.playing .equalizer{
-
-opacity:1;
-
-}
-
-/* GLOW */
-
-.music-btn.playing{
-
-box-shadow:
-0 0 0 6px rgba(201,169,107,.15),
-0 10px 24px rgba(0,0,0,.18);
-
-}
-
-/* ANIMATION */
+.music-disc{font-size:24px; position:absolute;}
+.music-btn.playing .music-disc{animation:spin 5s linear infinite;}
+.music-btn.playing .equalizer{opacity:1;}
+.music-btn.playing{box-shadow:0 0 0 6px rgba(201,169,107,.15), 0 10px 24px rgba(0,0,0,.18);}
 
 @keyframes spin{
-
-from{
-transform:rotate(0deg);
+from{transform:rotate(0deg);}
+to{transform:rotate(360deg);}
 }
-
-to{
-transform:rotate(360deg);
-}
-
-}
-
 
 /* FOOTER */
+.footer{padding:60px 18px; background:#22352d; text-align:center;}
+.footer-text{font-size:20px; line-height:1.8; color:#f6e5bc;}
 
-.footer{
-
-padding:60px 18px;
-
-background:#22352d;
-
-text-align:center;
-
-}
-
-.footer-text{
-
-font-size:20px;
-
-line-height:1.8;
-
-color:#f6e5bc;
-
-}
-
-
-/* POPUP */
-
+/* POPUP LAMA (DIPERTAHANKAN TAPI DIPERHALUS) */
 .popup{
-
-position:fixed;
-inset:0;
-
-background:rgba(0,0,0,.55);
-
-display:none;
-align-items:center;
-justify-content:center;
-
-padding:20px;
-
-z-index:99999;
-
+position:fixed; inset:0; background:rgba(0,0,0,.65);
+display:none; align-items:center; justify-content:center;
+padding:20px; z-index:99999; backdrop-filter: blur(5px);
 }
 
-.popup-box{
-
-width:100%;
-max-width:340px;
-
-padding:24px 18px;
-
-border-radius:22px;
-
-background:#4a3d4b;
-
-}
-
-.popup-text{
-
-font-size:20px;
-
-line-height:1.9;
-
-text-align:center;
-
-color:#fff0d0;
-
-}
-
-.popup-text{
-
-text-align:center;
-
-}
-
-.popup-text .arabic{
-
-font-size:22px;
-
-line-height:2;
-
-color:#fff0d0;
-
-margin-bottom:10px;
-
-}
-
-.popup-text .translate-small{
-
-font-size:12px;
-
-line-height:1.8;
-
-color:#d9c7a8;
-
-}
+.popup-box{width:100%; max-width:340px; padding:24px 18px; border-radius:22px; background:#22352d; border: 1px solid var(--gold);}
+.popup-text{font-size:20px; line-height:1.9; text-align:center; color:#fff0d0;}
+.popup-text .arabic{font-size:22px; line-height:2; color:#fff0d0; margin-bottom:10px;}
+.popup-text .translate-small{font-size:12px; line-height:1.8; color:#d9c7a8;}
 
 /* TABLET */
-
 @media(min-width:768px){
-
-.container{
-max-width:720px;
-}
-
-.couple-grid,
-.event-grid{
-grid-template-columns:1fr 1fr;
-}
-
-.location-map{
-height:380px;
-}
-
-.hero-content{
-max-width:700px;
-}
-
-.hero-name{
-font-size:90px;
-}
-
-.cover-card{
-max-width:460px;
-}
-
-.cover-couple{
-font-size:70px;
-}
-
+.container{max-width:720px;}
+.couple-grid, .event-grid{grid-template-columns:1fr 1fr;}
+.location-map{height:380px;}
+.hero-content{max-width:700px;}
+.hero-name{font-size:90px;}
+.cover-card{max-width:460px;}
+.cover-couple{font-size:70px;}
 }
 
 /* ===== BACKGROUND EFFECT ===== */
-
-body{
-
-position:relative;
-
-overflow-x:hidden;
-
-}
-
 /* ORB */
-
-/* ===== CINEMATIC ORB ===== */
-
 .bg-orb{
-
-position:fixed;
-
-border-radius:50%;
-
-filter:blur(120px);
-
-opacity:.32;
-
-pointer-events:none;
-
-z-index:0;
-
-mix-blend-mode:screen;
-
+position:fixed; border-radius:50%; filter:blur(120px); opacity:.32;
+pointer-events:none; z-index:0; mix-blend-mode:screen;
 animation:orbMove 14s infinite ease-in-out;
-
 }
-
-.orb1{
-
-width:320px;
-height:320px;
-
-background:#cfa45f;
-
-top:-100px;
-left:-100px;
-
-}
-
-.orb2{
-
-width:260px;
-height:260px;
-
-background:#6f5345;
-
-bottom:0;
-right:-80px;
-
-animation-delay:4s;
-
-}
-
-.orb3{
-
-width:220px;
-height:220px;
-
-background:#e6cf9f;
-
-top:45%;
-left:40%;
-
-animation-delay:8s;
-
-}
+.orb1{width:320px; height:320px; background:#cfa45f; top:-100px; left:-100px;}
+.orb2{width:260px; height:260px; background:#6f5345; bottom:0; right:-80px; animation-delay:4s;}
+.orb3{width:220px; height:220px; background:#e6cf9f; top:45%; left:40%; animation-delay:8s;}
 
 /* SPARKLE */
-
 .sparkle{
-
-position:fixed;
-
-font-size:18px;
-
-color:#f3dba8;
-
-opacity:.35;
-
-pointer-events:none;
-
-z-index:1;
-
-animation:sparkleFloat 6s infinite ease-in-out;
-
+position:fixed; font-size:18px; color:#f3dba8; opacity:.35;
+pointer-events:none; z-index:1; animation:sparkleFloat 6s infinite ease-in-out;
 }
-
-.sparkle1{
-
-top:14%;
-left:12%;
-
-}
-
-.sparkle2{
-
-top:30%;
-right:14%;
-
-animation-delay:2s;
-
-}
-
-.sparkle3{
-
-bottom:22%;
-left:18%;
-
-animation-delay:4s;
-
-}
-
-.sparkle4{
-
-bottom:16%;
-right:12%;
-
-animation-delay:6s;
-
-}
-
-/* ANIMATION */
+.sparkle1{top:14%; left:12%;}
+.sparkle2{top:30%; right:14%; animation-delay:2s;}
+.sparkle3{bottom:22%; left:18%; animation-delay:4s;}
+.sparkle4{bottom:16%; right:12%; animation-delay:6s;}
 
 @keyframes orbMove{
-
-0%{
-
-transform:
-translateY(0px)
-translateX(0px);
-
-}
-
-50%{
-
-transform:
-translateY(-30px)
-translateX(20px);
-
-}
-
-100%{
-
-transform:
-translateY(0px)
-translateX(0px);
-
-}
-
+0%{transform:translateY(0px) translateX(0px);}
+50%{transform:translateY(-30px) translateX(20px);}
+100%{transform:translateY(0px) translateX(0px);}
 }
 
 @keyframes sparkleFloat{
-
-0%{
-
-transform:
-translateY(0px)
-scale(1);
-
-opacity:.2;
-
-}
-
-50%{
-
-transform:
-translateY(-16px)
-scale(1.2);
-
-opacity:.5;
-
-}
-
-100%{
-
-transform:
-translateY(0px)
-scale(1);
-
-opacity:.2;
-
-}
-
+0%{transform:translateY(0px) scale(1); opacity:.2;}
+50%{transform:translateY(-16px) scale(1.2); opacity:.5;}
+100%{transform:translateY(0px) scale(1); opacity:.2;}
 }
 
 /* ===== STEAMSPACE MINI BUTTON ===== */
-
 .steamspace-btn-small{
-
-position:fixed;
-
-left:14px;
-
-bottom:18px;
-
-z-index:999;
-
-display:flex;
-
-align-items:center;
-
-gap:8px;
-
-padding:10px 14px;
-
-border-radius:999px;
-
-text-decoration:none;
-
-background:rgba(255,255,255,.05);
-
-backdrop-filter:blur(12px);
-
-border:1px solid rgba(255,255,255,.06);
-
-box-shadow:0 8px 24px rgba(0,0,0,.18);
-
+position:fixed; left:14px; bottom:18px; z-index:999;
+display:flex; align-items:center; gap:8px; padding:10px 14px;
+border-radius:999px; text-decoration:none;
+background:rgba(255,255,255,.05); backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,.06); box-shadow:0 8px 24px rgba(0,0,0,.18);
 transition:.3s ease;
-
 }
-
-.steamspace-btn-small:hover{
-
-transform:translateY(-3px);
-
-background:rgba(255,255,255,.08);
-
-}
-
-/* ICON */
+.steamspace-btn-small:hover{transform:translateY(-3px); background:rgba(255,255,255,.08);}
 
 .steamspace-icon{
-
-width:24px;
-height:24px;
-
-border-radius:50%;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-background:linear-gradient(145deg,#ecd6a5,#c9a96b);
-
-font-size:11px;
-
-color:#2b2418;
-
-flex-shrink:0;
-
+width:24px; height:24px; border-radius:50%; display:flex; align-items:center;
+justify-content:center; background:linear-gradient(145deg,#ecd6a5,#c9a96b);
+font-size:11px; color:#2b2418; flex-shrink:0;
 }
 
-/* TEXT */
-
-.steamspace-btn-small span{
-
-font-size:10px;
-
-letter-spacing:.6px;
-
-color:#f1dcc0;
-
-}
-
-/* MOBILE */
+.steamspace-btn-small span{font-size:10px; letter-spacing:.6px; color:#f1dcc0;}
 
 @media(max-width:768px){
-
-.steamspace-btn-small{
-
-left:12px;
-
-bottom:14px;
-
-padding:9px 12px;
-
-gap:7px;
-
+.steamspace-btn-small{left:12px; bottom:14px; padding:9px 12px; gap:7px;}
+.steamspace-btn-small span{font-size:9px;}
+.steamspace-icon{width:22px; height:22px; font-size:10px;}
 }
 
-.steamspace-btn-small span{
-
-font-size:9px;
-
+/* ===== IPHONE / IOS FIX ===== */
+@supports (-webkit-touch-callout: none) {
+html,body{overflow-x:hidden; -webkit-overflow-scrolling:touch;}
+.hero, .intro-section, .cover{background-attachment:scroll !important; min-height:100svh;}
+.card, .chat-card, .event-card, .invite-card{backdrop-filter:blur(8px);}
+.hero-name{font-size:42px; line-height:1.15;}
+.intro-main{font-size:42px;}
+.main-btn, .music-btn{transform:none !important;}
+body{padding-bottom:env(safe-area-inset-bottom);}
 }
 
-.steamspace-icon{
-
-width:22px;
-height:22px;
-
-font-size:10px;
-
+@media screen and (max-width:430px) and (-webkit-min-device-pixel-ratio:2){
+.couple-line{font-size:42px;}
+.section-title{font-size:36px;}
+.hero-name{font-size:38px;}
 }
 
+/* ===== TITLE CENTER FIX ===== */
+.section-label, .section-title{
+width:100%; text-align:center !important; margin-left:auto; margin-right:auto;
+}
+.section-header{
+display:flex; flex-direction:column; align-items:center; justify-content:center;
+text-align:center; margin-bottom:26px;
+}
+.section-label{
+font-size:10px; letter-spacing:4px; text-transform:uppercase;
+color:#d8be87; margin-bottom:10px; text-align:center;
+text-shadow:0 0 12px rgba(224,199,143,.18);
+}
+.section-title{
+font-family:'Amiri',serif; font-size:40px; line-height:1.15;
+color:var(--gold); text-align:center; margin:0;
+}
+
+@media(max-width:768px){
+.section-header{margin-bottom:22px;}
+.section-label{font-size:9px; letter-spacing:3px; margin-bottom:8px;}
+.section-title{font-size:38px; line-height:1.2;}
+}
+
+@supports (-webkit-touch-callout: none){
+.intro-content.show{max-height:2000px; opacity:1; display:block;}
 }
 
 </style>
 </head>
 <body>
-
-<!-- COVER -->
+<div class="floating floating1">🤍</div>
+<div class="floating floating2">✨</div>
+<div class="floating floating3">🌙</div>
+<div class="floating floating4">💍</div>
 
 <section id="cover" class="cover">
-
 <div class="cover-card">
-
-<p class="cover-bismillah arabic">
-بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
-</p>
-
-<p class="cover-title">
-THE WEDDING OF
-</p>
-
+<p class="cover-bismillah arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+<p class="cover-title">THE WEDDING OF</p>
 <h1 class="cover-couple">
-
-<div class="couple-line">
-Farihatul Fajriah
-</div>
-
-<div class="couple-separator">
-&
-</div>
-
-<div class="couple-line">
-Rendy Tiratna
-</div>
-
+<div class="couple-line">Farihatul Fajriah</div>
+<div class="couple-separator">&</div>
+<div class="couple-line">Rendy Tiratna</div>
 </h1>
-
-<p class="cover-quote">
-“Two souls united in love,
-under the blessing of Allah.”
-</p>
-
+<p class="cover-quote">“Two souls united in love, under the blessing of Allah.”</p>
 <div class="cover-target">
-
 <small>Kepada Yth.</small>
-
 <h3>Bapak/Ibu/Saudara/i</h3>
-
 <span>Di Tempat</span>
-
 </div>
-
-<button class="open-btn" onclick="openInvitation()">
-Buka Undangan
-</button>
-
+<button class="open-btn" onclick="openInvitation()">Buka Undangan</button>
 </div>
-
 </section>
-
-<!-- ===== BACKGROUND FX ===== -->
 
 <div class="bg-orb orb1"></div>
 <div class="bg-orb orb2"></div>
@@ -2188,904 +932,384 @@ Buka Undangan
 <div class="sparkle sparkle3">✦</div>
 <div class="sparkle sparkle4">✧</div>
 
-<!-- HERO -->
-
 <section class="hero">
-
 <div class="hero-content">
-
-<p class="hero-bismillah arabic">
-بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
-</p>
-
-<h1 class="hero-name">
-فريحة الفجرية
-<br>
-&
-<br>
-ريندي تيراتنا
-</h1>
-<br><br>
-<br><br>
-<br><br>
+<p class="hero-bismillah arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+<h1 class="hero-name">فريحة الفجرية<br>&<br>ريندي تيراتنا</h1>
+<br><br><br><br><br><br>
 <a href="#intro" class="scroll-btn">↓</a>
-
 </div>
-
 </section>
 
-<!-- INTRO -->
-
 <section id="intro" class="section">
-
 <div class="container">
-
 <p class="section-label">KATA PENGANTAR</p>
-
-<h2 class="section-title">
-رسالة المحبة
-</h2>
-
+<h2 class="section-title">رسالة المحبة</h2>
 <div class="intro-click" onclick="toggleIntro()">
-
-<h3 class="intro-main">
-Open Message
-</h3>
-
-<p class="intro-hint">
-Klik untuk membuka kata pengantar
-</p>
-
+<br><br>
+<h3 class="section-label">Open Message</h3>
+<p class="intro-text arabic">Klik untuk membuka</p>
 </div>
 
 <div id="introContent" class="intro-content">
-
 <div class="card">
-
 <p class="intro-text arabic">
 بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ
-<br>
-<br>
+<br><br>
 Dengan penuh kebahagiaan, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan kami.
-
 Merupakan suatu kehormatan bagi kami apabila Anda berkenan hadir serta memberikan doa restu, agar pernikahan ini senantiasa dipenuhi keberkahan dan kebahagiaan dari Allah SWT.
-
 Terima kasih atas kehadiran dan doa yang diberikan.
 <br>
 Wassalamu’alaikum Warahmatullahi Wabarakatuh
-<br><br>
-<br>
-<br>
+<br><br><br><br>
+</p>
 <p class="intro-text arabic">
 وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا
 لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً
-<br>
-<br>
+<br><br>
 - Q.S Ar-Rum : 21 -
 </p>
-
-
 </div>
-
 </div>
-
 </div>
-
 </section>
 
-<!-- COUPLE -->
-
 <section class="section reveal">
-
 <div class="container">
-
 <p class="section-label">MEMPELAI</p>
-
-<h2 class="section-title">
-العروس والعريس
-</h2>
-
+<h2 class="section-title">العروس والعريس</h2>
+<br><br>
 <div class="couple-grid">
-
 <div class="couple-card">
-
 <img src="./assets/images/bride.jpg" class="couple-img">
-
-<h3 class="couple-role arabic">
-العروس
-</h3>
-
-<h2 class="couple-name arabic">
-فريحة الفجرية
-</h2>
-
-<p class="couple-desc arabic">
-الابنة الأولى
-<br>
-للحاج أحمد سهرواردي
-<br>
-وأم نور الحفصة
-</p>
-
+<h3 class="couple-role arabic">العروس</h3>
+<h2 class="couple-name arabic">فريحة الفجرية</h2>
+<p class="couple-desc arabic">الابنة الأولى<br>للحاج أحمد سهرواردي<br>وأم نور الحفصة</p>
 </div>
-
 <div class="couple-card">
-
 <img src="./assets/images/groom.jpg" class="couple-img">
-
-<h3 class="couple-role arabic">
-العريس
-</h3>
-
-<h2 class="couple-name arabic">
-ريندي تيراتنا
-</h2>
-
-<p class="couple-desc arabic">
-الابن الأول
-<br>
-للمرحوم سورتنو
-<br>
-والمرحومة سوبرابتي
-<br>
-وأيضًا
-<br>
-(محمد زين العليم وأمي هاني)
-</p>
-
+<h3 class="couple-role arabic">العريس</h3>
+<h2 class="couple-name arabic">ريندي تيراتna</h2>
+<p class="couple-desc arabic">الابن الأول<br>للمرحوم سورتنو<br>والمرحومة سوبرابتي<br>وأيضًا<br>(محمد زين العليم وأمي هاني)</p>
 </div>
-
 </div>
-
 </div>
-
 </section>
-
-<!-- EVENT -->
 
 <section class="section reveal">
-
 <div class="container">
-
 <p class="section-label">ACARA</p>
-
-<h2 class="section-title">
-مراسم الزفاف
-</h2>
-
+<h2 class="section-title">مراسم الزفاف</h2>
+<br><br>
 <div class="event-grid">
-
 <div class="event-card">
-
 <div class="event-icon">🕌</div>
-
-<h3 class="event-title arabic">
-عقد القران
-</h3>
-
-<p class="event-text arabic">
-السبت ٢٠ ذو الحجة ١٤٤٧ هـ
-<br>
-الساعة 09:00 صباحاً
-</p>
-<p class="translate-small">
-Sabtu, 06 Juni 2026
-<br>
-Pukul 09:00 WIB
-</p>
+<h3 class="event-title arabic">عقد القران</h3>
+<p class="event-text arabic">السبت ٢٠ ذو الحجة ١٤٤٧ هـ<br>الساعة 09:00 صباحاً</p>
+<p class="couple-desc arabic">Sabtu, 06 Juni 2026<br>Pukul 09:00 WIB</p>
 </div>
-
 <div class="event-card">
-
 <div class="event-icon">✨</div>
-
-<h3 class="event-title arabic">
-حفل الاستقبال
-</h3>
-
-<p class="event-text arabic">
-السبت ٢٠ ذو الحجة ١٤٤٧ هـ
-<br>
-الساعة 10:00 صباحاً
-</p>
-<p class="translate-small">
-Sabtu, 06 Juni 2026
-<br>
-Pukul 10:00 WIB
-</p>
+<h3 class="event-title arabic">حفل الاستقبال</h3>
+<p class="event-text arabic">السبت ٢٠ ذو الحجة ١٤٤٧ هـ<br>الساعة 10:00 صباحاً</p>
+<p class="couple-desc arabic">Sabtu, 06 Juni 2026<br>Pukul 10:00 WIB</p>
 </div>
-
 </div>
-
 </div>
-
 </section>
-
-<!-- ===== LOKASI ===== -->
 
 <section class="section reveal" id="location">
-
 <div class="container">
-
-<p class="section-label">
-LOKASI
-</p>
-
-<h2 class="section-title arabic">
-مكان الزفاف
-</h2>
-
+<p class="section-label">LOKASI</p>
+<h2 class="section-title arabic">مكان الزفاف</h2>
 <div class="location-layout">
-
-<!-- INFO -->
-
 <div class="location-card-custom">
-
-<div class="location-icon">
-📍
-</div>
-
-<h3 class="location-title arabic">
-في منزل العروس
-</h3>
-
+<div class="location-icon">📍</div>
+<h3 class="location-title arabic">في منزل العروس</h3>
 <div class="location-line"></div>
-
-<p class="location-arabic arabic">
-معهد الكلياني الإسلامي
-<br>
-سيتامان بادارينتشانغ
-</p>
-
-<p class="location-indo">
-Pon-Pes Koleang (Al Kuliyani)
-<br>
-Citaman - Padarincang
-</p>
-
+<p class="location-arabic arabic">معهد الكلياني الإسلامي<br>سيتامان بادارينتشانغ</p>
+<p class="location-indo">Pon-Pes Koleang (Al Kuliyani)<br>Citaman - Padarincang</p>
 </div>
-
-<!-- MAP -->
-
 <div class="location-map-custom">
-
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15865.057511628547!2d105.93796075149528!3d-6.228834067555327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e4229238033e0c7%3A0x1c37eb9fa90513e3!2sPondok%20Pesantren%20SALAFI%20AL-KULIYANI!5e0!3m2!1sid!2sid!4v1778730171098!5m2!1sid!2sid"
-width="600" height="450" style="border:0;" 
-allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-</iframe>
-
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15865.057511628547!2d105.93796075149528!3d-6.228834067555327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e4229238033e0c7%3A0x1c37eb9fa90513e3!2sPondok%20Pesantren%20SALAFI%20AL-KULIYANI!5e0!3m2!1sid!2sid!4v1778730171098!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
-
 </div>
-
 </div>
-
 </section>
 
-<!-- ===== SECRET MESSAGE ===== -->
-
 <section class="section reveal">
-
 <div class="container">
-
-<p class="section-label">
-PESAN
-</p>
-
-<h2 class="section-title arabic">
-رسائل خاصة
-</h2>
-
+<p class="section-label">PESAN</p>
+<h2 class="section-title arabic">رسائل خاصة</h2>
 <div class="secret-grid">
-
-<button class="secret-btn" onclick="openPopup(1)">
-رسالة ١
-</button>
-
-<button class="secret-btn" onclick="openPopup(2)">
-رسالة ٢
-</button>
-
-<button class="secret-btn" onclick="openPopup(3)">
-رسالة ٣
-</button>
-
-<button class="secret-btn" onclick="openPopup(4)">
-رسالة ٤
-</button>
-
+<button class="secret-btn" onclick="openPopup(1)">رسالة ١</button>
+<button class="secret-btn" onclick="openPopup(2)">رسالة ٢</button>
+<button class="secret-btn" onclick="openPopup(3)">رسالة ٣</button>
+<button class="secret-btn" onclick="openPopup(4)">رسالة ٤</button>
 </div>
-
 </div>
-
 </section>
 
-<!-- ===== MENGANGKAT HAJAT ===== -->
-
 <section class="section reveal">
-
 <div class="container">
-
-<p class="section-label">
-MENGANGKAT HAJAT
-</p>
-
-<h2 class="section-title arabic">
-رافعو الحفل
-</h2>
-
+<p class="section-label">MENGANGKAT HAJAT</p>
+<h2 class="section-title arabic">رافعو الحفل</h2>
+<br><br>
 <div class="card">
-
-<p class="intro-text arabic">
-
-• Keluarga Besar Alm. KH Hudori
-
-
-<br><br>
-
-• Keluarga Besar
-Pon-Pes Nurul Ittihaady
-
-
+<p class="invite-text arabic">
+• Keluarga Besar Alm. KH Hudori<br><br>
+• Keluarga Besar Pon-Pes Nurul Ittihaady<br><br>
+• Keluarga Besar Alm. KH Hudori (Pon-Pes Koleang / Al Kuliyani)<br><br>
+• Keluarga Besar Pon-Pes Nurul Ittihaady (Tangerang)
 </p>
-
-<p class="translate-small"
-style="
-margin-top:18px;
-text-align:center;
-line-height:2;
-">
-
-• Keluarga Besar Alm. KH Hudori
-(Pon-Pes Koleang / Al Kuliyani)
-
-<br><br>
-
-• Keluarga Besar
-Pon-Pes Nurul Ittihaady
-(Tangerang)
-
-</p>
-
 </div>
-
 </div>
-
 </section>
 
-<!-- ===== TURUT MENGUNDANG ===== -->
-
 <section class="section reveal">
-
 <div class="container">
-
-<p class="section-label">
-TURUT MENGUNDANG
-</p>
-
-<h2 class="section-title arabic">
-المدعوون الكرام
-</h2>
-
+<p class="section-label">TURUT MENGUNDANG</p>
+<h2 class="section-title arabic">المدعوون الكرام</h2>
+<br>
 <div class="invite-grid">
-
-<!-- PIHAK PEREMPUAN -->
-
 <div class="invite-card">
-
-<h3 class="invite-title arabic">
-من جهة العروس
-</h3>
-
-<p class="invite-subtitle">
-(Keluarga Pihak Perempuan)
-</p>
-
+<h3 class="invite-title arabic">من جهة العروس</h3>
+<p class="invite-subtitle">(Keluarga Pihak Perempuan)</p>
 <div class="invite-line"></div>
-
 <p class="invite-text arabic">
-
-• Keluarga Besar Buyut KH. Muksam
-
-<br><br>
-
-• Keluarga Besar Mama Abdussalam
-
-
-<br><br>
-
-• Keluarga Besar Bani Haji Sarman
-
-
-<br><br>
-
-• Keluarga Besar Bani Abdullah
-
-
-<br><br>
-
-• Keluarga Besar Mama Tua Bpk Sarimin
-
-<br><br>
-
-• Keluarga Besar SD Islam Bismillah
-
-
-<br><br>
-
+• Keluarga Besar Buyut KH. Muksam<br><br>
+• Keluarga Besar Mama Abdussalam<br><br>
+• Keluarga Besar Bani Haji Sarman<br><br>
+• Keluarga Besar Bani Abdullah<br><br>
+• Keluarga Besar Mama Tua Bpk Sarimin<br><br>
+• Keluarga Besar SD Islam Bismillah<br><br>
 • Yayasan Baitul Yatama Al-Jannah
-
 </p>
-
 </div>
-
-<!-- PIHAK LAKI -->
-
 <div class="invite-card">
-
-<h3 class="invite-title arabic">
-من جهة العريس
-</h3>
-
-<p class="invite-subtitle">
-(Keluarga Pihak Laki-Laki)
-</p>
-
+<h3 class="invite-title arabic">من جهة العريس</h3>
+<p class="invite-subtitle">(Keluarga Pihak Laki-Laki)</p>
 <div class="invite-line"></div>
-
 <p class="invite-text arabic">
-
-• Keluarga Besar Alm. Bpk Suratno
-
-
-<br><br>
-
-• Keluarga Besar Almh. Ibu Suprapti
-
-
-<br><br>
-
-• Keluarga Besar SD Syaikh Yusuf
-
-
-<br><br>
-
-• Bpk Rusdi Slamet
-
-<br><br>
-
-• Bpk Aiptu Yudi Ferdian
-
-<br><br>
-
+• Keluarga Besar Alm. Bpk Suratno<br><br>
+• Keluarga Besar Almh. Ibu Suprapti<br><br>
+• Keluarga Besar SD Syaikh Yusuf<br><br>
+• Bpk Rusdi Slamet<br><br>
+• Bpk Aiptu Yudi Ferdian<br><br>
 </p>
-
 </div>
-
 </div>
-
 </div>
-
 </section>
-
-<!-- POPUP -->
-
-<div id="popup" class="popup-overlay">
-
-<div class="popup-card">
-
-<div id="popupText"></div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ===== PESAN UNTUK MEMPELAI ===== -->
 
 <section class="section reveal">
-
 <div class="container">
-
-<p class="section-label">
-PESAN UNTUK MEMPELAI
-</p>
-
-<h2 class="section-title arabic">
-رسائل للعروسين
-</h2>
-
+<p class="section-label">PESAN UNTUK MEMPELAI</p>
+<h2 class="section-title arabic">رسائل للعروسين</h2>
+<br><br>
 <div class="chat-wrap">
-
-<!-- CHAT 1 -->
-
 <div class="chat-card">
-
 <div class="chat-header">
-
-<div class="chat-avatar">
-A
+<div class="chat-avatar">A</div>
+<div><h4 class="chat-username">@annisaaa_</h4><p class="chat-time">baru saja</p></div>
 </div>
-
-<div>
-
-<h4 class="chat-username">
-@annisaaa_
-</h4>
-
-<p class="chat-time">
-baru saja
-</p>
-
+<p class="chat-message">MasyaAllah 🥺 Semoga jadi keluarga yang sakinah, mawadah, warahmah 🤍</p>
 </div>
-
-</div>
-
-<p class="chat-message">
-MasyaAllah 🥺
-Semoga jadi keluarga yang sakinah,
-mawadah, warahmah 🤍
-</p>
-
-</div>
-
-<!-- CHAT 2 -->
-
 <div class="chat-card">
-
 <div class="chat-header">
-
-<div class="chat-avatar">
-R
+<div class="chat-avatar">R</div>
+<div><h4 class="chat-username">@rizkyprtm</h4><p class="chat-time">2 menit lalu</p></div>
 </div>
-
-<div>
-
-<h4 class="chat-username">
-@rizkyprtm
-</h4>
-
-<p class="chat-time">
-2 menit lalu
-</p>
-
+<p class="chat-message">Selamat menempuh hidup baru ✨ Semoga bahagia selalu sampai tua nanti</p>
 </div>
-
-</div>
-
-<p class="chat-message">
-Selamat menempuh hidup baru ✨
-Semoga bahagia selalu sampai tua nanti
-</p>
-
-</div>
-
-<!-- CHAT 3 -->
-
 <div class="chat-card">
-
 <div class="chat-header">
-
-<div class="chat-avatar">
-N
+<div class="chat-avatar">N</div>
+<div><h4 class="chat-username">@nurhayati</h4><p class="chat-time">5 menit lalu</p></div>
 </div>
-
-<div>
-
-<h4 class="chat-username">
-@nurhayati
-</h4>
-
-<p class="chat-time">
-5 menit lalu
-</p>
-
+<p class="chat-message">Akhirnya hari bahagia datang juga 🥹 Semoga selalu dilimpahkan keberkahan</p>
 </div>
-
-</div>
-
-<p class="chat-message">
-Akhirnya hari bahagia datang juga 🥹
-Semoga selalu dilimpahkan keberkahan
-</p>
-
-</div>
-
-<!-- CHAT 4 -->
-
 <div class="chat-card">
-
 <div class="chat-header">
-
-<div class="chat-avatar">
-F
+<div class="chat-avatar">F</div>
+<div><h4 class="chat-username">@fadil_story</h4><p class="chat-time">10 menit lalu</p></div>
 </div>
-
-<div>
-
-<h4 class="chat-username">
-@fadil_story
-</h4>
-
-<p class="chat-time">
-10 menit lalu
-</p>
-
+<p class="chat-message">Bahagia terus untuk kedua mempelai 💍 Doa terbaik selalu</p>
 </div>
-
 </div>
-
-<p class="chat-message">
-Bahagia terus untuk kedua mempelai 💍
-Doa terbaik selalu
-</p>
-
 </div>
-
-</div>
-
-</div>
-
 </section>
 
-<!-- RSVP -->
+<section class="section reveal" id="gift">
+<div class="container">
+<p class="section-label">KADO DIGITAL</p>
+<h2 class="section-title arabic">هدايا زفاف</h2>
+<br><br>
+<div class="card" style="text-align: center;">
+    <p class="intro-text-main" style="margin-bottom: 20px;">
+        Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Namun jika Anda ingin memberikan tanda kasih, Anda dapat memberikannya melalui:
+    </p>
+
+    <div class="invite-card" style="margin-bottom: 15px; background: rgba(255,255,255,0.08);">
+        <div class="event-icon" style="font-size: 30px;">🏦</div>
+        <h3 class="event-title" style="font-size: 20px; color: var(--gold);">BANK MANDIRI</h3>
+        <p class="event-text" id="rek1" style="font-size: 18px; letter-spacing: 2px; color: #fff;">1550013848752</p>
+        <p class="couple-desc" style="font-size: 14px; margin-bottom: 15px;">a.n RENDY TIRATNA</p>
+        <button class="open-btn" onclick="copyToClipboard('rek1')" style="padding: 8px 20px; width: auto; font-size: 11px;">Salin No. Rekening</button>
+    </div>
+
+</div>
+</div>
+</section>
+
+<script>
+function copyToClipboard(id) {
+    const text = document.getElementById(id).innerText;
+    navigator.clipboard.writeText(text).then(() => {
+        alert("Nomor berhasil disalin: " + text);
+    }).catch(err => {
+        console.error('Gagal menyalin: ', err);
+    });
+}
+</script>
 
 <section class="section reveal">
-
 <div class="container">
-
-<h2 class="section-title">
-تأكيد الحضور
-</h2>
-
+<h2 class="section-title">تأكيد الحضور</h2>
+<br><br>
 <div class="card">
-
 <form class="rsvp-form">
-
 <input type="text" placeholder="Nama Lengkap">
-
 <select>
 <option>Konfirmasi Kehadiran</option>
 <option>Hadir</option>
 <option>Tidak Hadir</option>
 </select>
-
 <textarea rows="4" placeholder="Ucapan dan doa"></textarea>
-
-<button type="submit">
-Kirim Konfirmasi
-</button>
-
+<button type="submit">Kirim Konfirmasi</button>
 </form>
-
 </div>
-
 </div>
-
 </section>
 
 <footer class="footer">
-
-<p class="footer-text arabic">
-بارك الله لكما وبارك عليكما وجمع بينكما في خير
-</p>
+<p class="footer-text arabic">بارك الله لكما وبارك عليكما وجمع بينكما في خير</p>
 </footer>
 
-<<button class="music-btn" id="musicBtn" onclick="toggleMusic()">
-
-<div class="music-disc">
-🎵
-</div>
-
+<button class="music-btn" id="musicBtn" onclick="toggleMusic()">
+<div class="music-disc">🎵</div>
 <div class="equalizer">
-
-<span></span>
-<span></span>
-<span></span>
-
+<span></span><span></span><span></span>
 </div>
-
 </button>
 
 <audio id="music" loop>
-
-<source
-src="./assets/music/wedding nasheed.mp3"
-type="audio/mp3">
-
+<source src="./assets/music/wedding nasheed.mp3" type="audio/mp3">
 </audio>
 
 <div id="popup" class="popup">
-
 <div class="popup-box">
-
 <p id="popupText" class="popup-text arabic"></p>
-
 </div>
-
 </div>
 
 <script>
-
 const music = document.getElementById('music');
-
 const musicBtn = document.getElementById('musicBtn');
 
 function toggleMusic(){
-
-if(music.paused){
-
-music.play();
-
-musicBtn.classList.add('playing');
-
-}else{
-
-music.pause();
-
-musicBtn.classList.remove('playing');
-
+    if(music.paused){
+        music.play();
+        musicBtn.classList.add('playing');
+    }else{
+        music.pause();
+        musicBtn.classList.remove('playing');
+    }
 }
 
+const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+if(isiOS){
+    music.pause();
 }
 
 function openInvitation(){
-
-const cover=document.getElementById('cover');
-
-cover.style.transition='1s ease';
-
-cover.style.opacity='0';
-
-cover.style.visibility='hidden';
-
-music.play().catch(()=>{});
-
+    const cover=document.getElementById('cover');
+    cover.style.transition='1.2s ease-in-out';
+    cover.style.opacity='0';
+    setTimeout(() => {
+        cover.style.visibility='hidden';
+    }, 1200);
+    music.play().catch(()=>{});
 }
 
 function toggleIntro(){
-
-const content=document.getElementById('introContent');
-
-content.classList.toggle('show');
-
+    const content = document.getElementById('introContent');
+    if(content.style.display === 'block'){
+        content.style.display = 'none';
+    }else{
+        content.style.display = 'block';
+    }
 }
 
 const messages={
-
-1:`
-<div class="popup-text">
-
-<p class="arabic">
-أسعد الله أيامكم كما أسعدتم حضورنا 🤍
-</p>
-
-<p class="translate-small">
-Semoga Allah membahagiakan hari-hari Anda
-sebagaimana Anda telah membahagiakan hari kami.
-</p>
-
-</div>
-`,
-
-2:`
-<div class="popup-text">
-
-<p class="arabic">
-شكرًا لحضوركم ودعواتكم الجميلة ✨
-</p>
-
-<p class="translate-small">
-Terima kasih atas kehadiran
-dan doa-doa indah Anda.
-</p>
-
-</div>
-`,
-
-3:`
-<div class="popup-text">
-
-<p class="arabic">
-نسأل الله أن يجمعنا دائمًا بالمحبة والخير 🌙
-</p>
-
-<p class="translate-small">
-Semoga Allah selalu mempertemukan kita
-dalam cinta dan kebaikan.
-</p>
-
-</div>
-`,
-
-4:`
-<div class="popup-text">
-
-<p class="arabic">
-وجودكم يزيد فرحتنا نورًا وجمالًا 💍
-</p>
-
-<p class="translate-small">
-Kehadiran Anda menambah
-cahaya dan keindahan kebahagiaan kami.
-</p>
-
-</div>
-`
-
+1:`<div class="popup-text"><p class="arabic">أسعد الله أيامكم كما أسعدتم حضورنا 🤍</p><p class="translate-small">Semoga Allah membahagiakan hari-hari Anda sebagaimana Anda telah membahagiakan hari kami.</p></div>`,
+2:`<div class="popup-text"><p class="arabic">شكرًا لحضوركم ودعواتكم الجميلة ✨</p><p class="translate-small">Terima kasih atas kehadiran dan doa-doa indah Anda.</p></div>`,
+3:`<div class="popup-text"><p class="arabic">نسأل الله أن يجمعنا دائمًا بالمحبة والخير 🌙</p><p class="translate-small">Semoga Allah selalu mempertemukan kita dalam cinta dan kebaikan.</p></div>`,
+4:`<div class="popup-text"><p class="arabic">وجودكم يزيد فرحتنا نورًا وجمالًا 💍</p><p class="translate-small">Kehadiran Anda menambah cahaya dan keindahan kebahagiaan kami.</p></div>`
 };
 
+/* PERBAIKAN LOGIKA POPUP AGAR HALUS */
 function openPopup(id){
-
-document.getElementById('popup').style.display='flex';
-
-document.getElementById('popupText').innerHTML=messages[id];
-
+    const popup = document.getElementById('popup');
+    const popupText = document.getElementById('popupText');
+    popupText.innerHTML=messages[id];
+    
+    popup.style.display='flex';
+    popup.style.opacity='0';
+    
+    // Memberikan jeda singkat agar transisi opacity & scale terlihat
+    setTimeout(() => {
+        popup.style.transition='opacity 0.4s ease';
+        popup.style.opacity='1';
+        const box = popup.querySelector('.popup-box');
+        box.style.transition='transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+        box.style.transform='scale(1)';
+    }, 10);
 }
 
 document.getElementById('popup').onclick=function(){
-this.style.display='none';
+    const box = this.querySelector('.popup-box');
+    box.style.transform='scale(0.8)';
+    this.style.opacity='0';
+    setTimeout(() => {
+        this.style.display='none';
+    }, 400);
 }
 
-/* ===== DYNAMIC REVEAL ===== */
-
+/* ===== DYNAMIC REVEAL (SWAP EFFECT) ===== */
 const reveals = document.querySelectorAll('.reveal');
-
 function revealOnScroll(){
-
-const windowHeight = window.innerHeight;
-
-reveals.forEach((reveal)=>{
-
-const revealTop = reveal.getBoundingClientRect().top;
-
-const revealBottom = reveal.getBoundingClientRect().bottom;
-
-const visiblePoint = 120;
-
-/* MASUK VIEW */
-
-if(
-revealTop < windowHeight - visiblePoint &&
-revealBottom > visiblePoint
-){
-
-reveal.classList.add('active');
-
-}else{
-
-/* KELUAR VIEW */
-
-reveal.classList.remove('active');
-
+    const windowHeight = window.innerHeight;
+    reveals.forEach((reveal)=>{
+        const revealTop = reveal.getBoundingClientRect().top;
+        const revealBottom = reveal.getBoundingClientRect().bottom;
+        const visiblePoint = 100; // Jarak trigger lebih responsif
+        
+        if(revealTop < windowHeight - visiblePoint && revealBottom > 0){
+            reveal.classList.add('active');
+        } else {
+            // Opsional: Hapus baris ini jika tidak ingin animasi berulang saat scroll ke atas
+            // reveal.classList.remove('active'); 
+        }
+    });
 }
-
-});
-
-}
-
 window.addEventListener('scroll', revealOnScroll);
-
 window.addEventListener('load', revealOnScroll);
 </script>
 
-<!-- ===== STEAMSPACE BUTTON ===== -->
-
-<a
-href="https://wa.me/62895320724689?text=Assalamu'alaikum%20SteamSpace%20✨%0A%0ASaya%20tertarik%20dengan%20jasa%20undangan%20digitalnya.%20Boleh%20minta%20info%20lebih%20lanjut%20untuk%20pembuatan%20website%20undangan%20seperti%20ini%3F%20😊"
-target="_blank"
-class="steamspace-btn-small">
-
-<div class="steamspace-icon">
-✦
-</div>
-
-<span>
-SteamSpace
-</span>
-
+<a href="https://wa.me/62895320724689?text=Assalamu'alaikum%20SteamSpace%20✨%0A%0ASaya%20tertarik%20dengan%20jasa%20undangan%20digitalnya.%20Boleh%20minta%20info%20lebih%20lanjut%20untuk%20pembuatan%20website%20undangan%20seperti%20ini%3F%20😊" target="_blank" class="steamspace-btn-small">
+<div class="steamspace-icon">✦</div>
+<span>SteamSpace</span>
 </a>
-
 </body>
 </html>
