@@ -84,14 +84,15 @@ animation:floatMove 10s infinite ease-in-out;
 }
 
 /* ===== PERBAIKAN SWAP/SCROLL ANIMATION ===== */
-.reveal{
-opacity:0;
-transform:translateY(50px) scale(0.95); /* Menambah efek scale agar lebih halus */
-transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Kurva transisi lebih premium */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95); /* Awalnya agak turun dan kecil */
+    transition: all 1.2s cubic-bezier(0.25, 1, 0.5, 1); /* Kurva smooth */
 }
-.reveal.active{
-opacity:1;
-transform:translateY(0) scale(1);
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0) scale(1); /* Kembali ke posisi asli */
 }
 
 .scroll-btn{
@@ -411,14 +412,20 @@ letter-spacing:.5px;
 }
 
 /* ===== INTRO CONTENT ===== */
-.intro-content{
-display:none;
-margin-top:24px;
+.intro-content {
+    max-height: 0; /* Mulai dari tinggi 0 */
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-20px); /* Efek swap sedikit dari atas */
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); /* Kurva smooth */
+    display: block !important; /* Pakai block, tapi diatur max-height */
 }
 
-.intro-content.show{
-display:block;
-animation:fadeIntro .7s ease;
+.intro-content.show {
+    max-height: 1000px; /* Beri angka tinggi maksimal yang cukup */
+    opacity: 1;
+    transform: translateY(0);
+    margin-top: 24px;
 }
 
 @keyframes fadeIntro{
@@ -941,20 +948,21 @@ color:var(--gold); text-align:center; margin:0;
 </div>
 </section>
 
-<section id="intro" class="section">
-<div class="container">
-<p class="section-label">KATA PENGANTAR</p>
-<h2 class="section-title">رسالة المحبة</h2>
-<div class="intro-click" onclick="toggleIntro()">
-<br><br>
-<h3 class="section-label">Open Message</h3>
-<p class="intro-text arabic">Klik untuk membuka</p>
-</div>
+<section id="intro" class="section reveal">
+    <div class="container">
+        <p class="section-label">KATA PENGANTAR</p>
+        <h2 class="section-title">رسالة المحبة</h2>
+        
+        <div class="intro-click" onclick="toggleIntro()" style="cursor: pointer;">
+            <br>
+            <p class="intro-text-main">Klik untuk membuka pesan</p>
+            <p id="introArrow" style="transition: 0.5s; color: var(--gold);">↓</p>
+        </div>
 
-<div id="introContent" class="intro-content">
-<div class="card">
-<p class="intro-text arabic">
-بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ
+        <div id="introContent" class="intro-content">
+            <div class="card">
+                <p class="intro-text arabic">
+                    بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ
 <br><br>
 Dengan penuh kebahagiaan, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan kami.
 Merupakan suatu kehormatan bagi kami apabila Anda berkenan hadir serta memberikan doa restu, agar pernikahan ini senantiasa dipenuhi keberkahan dan kebahagiaan dari Allah SWT.
@@ -1103,14 +1111,14 @@ Wassalamu’alaikum Warahmatullahi Wabarakatuh
 </section>
 
 <section class="section reveal">
-<div class="container">
-<p class="section-label">PESAN UNTUK MEMPELAI</p>
-<h2 class="section-title arabic">رسائل للعروسين</h2>
+    <div class="container" style="display: flex; flex-direction: column; align-items: center;">
+        <p class="section-label">PESAN UNTUK MEMPELAI</p>
+        <h2 class="section-title arabic">رسائل للعروسين</h2>
 <br><br>
 <div class="chat-wrap">
-<div class="chat-card">
-<div class="chat-header">
-<div class="chat-avatar">A</div>
+            <div class="chat-card">
+                <div class="chat-header">
+                    <div class="chat-avatar">A</div>
 <div><h4 class="chat-username">@annisaaa_</h4><p class="chat-time">baru saja</p></div>
 </div>
 <p class="chat-message">MasyaAllah 🥺 Semoga jadi keluarga yang sakinah, mawadah, warahmah 🤍</p>
@@ -1249,12 +1257,20 @@ function openInvitation(){
     music.play().catch(()=>{});
 }
 
-function toggleIntro(){
+function toggleIntro() {
     const content = document.getElementById('introContent');
-    if(content.style.display === 'block'){
-        content.style.display = 'none';
-    }else{
+    
+    if (!content.classList.contains('show')) {
         content.style.display = 'block';
+        // Beri sedikit delay agar animasi CSS transition bisa jalan
+        setTimeout(() => {
+            content.classList.add('show');
+            content.style.opacity = '1';
+            content.style.transform = 'translateY(0)';
+        }, 10);
+    } else {
+        content.classList.remove('show');
+        setTimeout(() => { content.style.display = 'none'; }, 500);
     }
 }
 
